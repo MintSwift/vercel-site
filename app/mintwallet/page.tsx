@@ -37,7 +37,7 @@ export default function MintWalletPage() {
       <section className="wallet-intro page-shell">
         <div className="wallet-intro-copy">
           <p className="eyebrow"><span className="eyebrow-dot" /> Personal finance · private by design</p>
-          <h1>Your details,<br /><em>in your hands.</em></h1>
+          <h1>중요한 정보,<br /><em>안전하게 보관하세요.</em></h1>
           <p className="wallet-lead">구독 결제일과 지출부터 카드·계좌·개인정보까지, 흩어진 중요한 정보를 한 곳에 안전하고 보기 좋게 정리하세요.</p>
           <AppStoreButton href="https://apps.apple.com/kr/app/id1532835617" locale="ko-kr" />
         </div>
@@ -54,7 +54,7 @@ export default function MintWalletPage() {
       <section className="wallet-story page-shell">
         <div className="wallet-section-heading">
           <p className="section-kicker">One calm place for the important things</p>
-          <h2>Less searching.<br /><em>More knowing.</em></h2>
+          <h2>카드·계좌·구독·개인정보,<br /><em>한눈에 관리하세요.</em></h2>
           <p>카드, 계좌, 구독, 신분증. 각각의 정보를 따로 찾아 헤매지 않도록 필요한 맥락을 한 화면에 담았습니다.</p>
         </div>
         <div className="wallet-screenshot-list">
