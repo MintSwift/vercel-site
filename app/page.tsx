@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ProjectBanner from "./components/ProjectBanner";
 
 export const metadata: Metadata = {
   title: "CoolMint — Portfolio",
@@ -34,6 +35,8 @@ export default function Home() {
         </nav>
         <span className="header-status"><span className="status-dot" /> Available for select projects</span>
       </header>
+
+      <ProjectBanner />
 
       <section id="top" className="portfolio-hero page-shell">
         <div>
