@@ -140,3 +140,85 @@ h1, h2, h3, p { margin-top: 0; } em { color: #85837b; font-family: Georgia, 'Tim
   .overtake-note { display: block; padding-bottom: 90px; padding-top: 90px; }
   .overtake-note > p { margin-top: 60px; }
 }
+
+.case-wallet .eyebrow-dot { background: #20c7b5; }
+.wallet-intro { border-bottom: 1px solid var(--line); display: grid; gap: 10%; grid-template-columns: 1.15fr .85fr; padding-bottom: 125px; padding-top: 115px; }
+.wallet-intro-copy h1 { font-size: clamp(70px, 10vw, 142px); font-weight: 500; letter-spacing: -.11em; line-height: .82; margin: 0; }
+.wallet-intro-copy h1 em { color: #9d8dcc; display: block; font-size: .72em; letter-spacing: -.1em; margin-top: 17px; }
+.wallet-lead { color: #55544d; font-size: 17px; line-height: 1.75; margin: 52px 0 0; max-width: 480px; }
+.wallet-intro .app-store-button { margin: 33px 0 0; }
+.wallet-intro-aside { align-self: end; border-top: 1px solid var(--line); padding-top: 17px; }
+.wallet-intro-aside > p { color: var(--ink-soft); font-size: 15px; line-height: 1.75; margin: 0 0 68px; max-width: 350px; }
+.wallet-metadata { display: grid; gap: 10px 25px; grid-template-columns: 1fr 1fr; }
+.wallet-metadata span { color: var(--ink-soft); font-size: 10px; text-transform: uppercase; }
+.wallet-metadata strong { font-size: 13px; font-weight: 400; }
+.wallet-story { padding-bottom: 150px; padding-top: 145px; }
+.wallet-section-heading { display: grid; gap: 12%; grid-template-columns: .8fr 1fr 1fr; margin-bottom: 72px; }
+.wallet-section-heading .section-kicker { margin: 4px 0 0; }
+.wallet-section-heading h2, .wallet-feature-intro h2, .wallet-privacy-note h2 { font-size: clamp(45px, 5.8vw, 78px); font-weight: 500; letter-spacing: -.1em; line-height: .88; margin: 0; }
+.wallet-section-heading h2 em, .wallet-feature-intro h2 em, .wallet-privacy-note h2 em { color: #9d8dcc; display: block; margin-top: 13px; }
+.wallet-section-heading > p:last-child { color: var(--ink-soft); font-size: 14px; line-height: 1.75; margin: 3px 0 0; max-width: 290px; }
+.wallet-screenshot-grid { display: grid; gap: 55px 24px; grid-template-columns: repeat(3, 1fr); }
+.wallet-shot-card { min-width: 0; }
+.wallet-shot { background: #f0f0f4; border-radius: 28px; box-shadow: 0 18px 45px rgba(17,17,15,.08); overflow: hidden; }
+.wallet-shot img { display: block; height: auto; width: 100%; }
+.wallet-shot-caption { border-top: 1px solid var(--line); padding-top: 14px; }
+.wallet-shot-caption > span { color: var(--ink-soft); font-size: 10px; text-transform: uppercase; }
+.wallet-shot-caption h3 { font-size: 16px; font-weight: 500; letter-spacing: -.045em; margin: 13px 0 0; }
+.wallet-features { background: #15201f; color: #f5f4ef; display: grid; gap: 12%; grid-template-columns: .9fr 1.1fr; padding-bottom: 140px; padding-top: 140px; }
+.wallet-features .section-kicker { color: #7c9992; }
+.wallet-feature-intro h2 em { color: #51dfc8; }
+.wallet-feature-list { border-top: 1px solid #30413f; }
+.wallet-feature-list article { border-bottom: 1px solid #30413f; display: grid; gap: 25px; grid-template-columns: 32px 1fr; padding: 25px 0 29px; }
+.wallet-feature-list article > span { color: #51dfc8; font-size: 10px; }
+.wallet-feature-list h3 { font-size: 19px; font-weight: 500; letter-spacing: -.05em; margin: -4px 0 9px; }
+.wallet-feature-list p { color: #a9b9b3; font-size: 13px; line-height: 1.7; margin: 0; max-width: 440px; }
+.wallet-privacy-note { align-items: end; display: grid; gap: 15%; grid-template-columns: 1fr 1fr; padding-bottom: 145px; padding-top: 145px; }
+.wallet-privacy-note .section-kicker { margin-bottom: 29px; }
+.wallet-privacy-points { border-top: 1px solid var(--line); padding-top: 17px; }
+.wallet-privacy-points > p { color: var(--ink-soft); font-size: 13px; line-height: 1.8; margin: 0 0 33px; }
+.wallet-privacy-points > div { border-top: 1px solid var(--line); display: grid; gap: 20px; grid-template-columns: 32px 1fr; padding: 14px 0; }
+.wallet-privacy-points span { color: #20c7b5; font-size: 10px; }
+.wallet-privacy-points strong { font-size: 13px; font-weight: 400; }
+@media (prefers-color-scheme: dark) {
+  .wallet-lead { color: #aeb4b1; }
+  .wallet-shot { background: #e9e9ee; box-shadow: 0 18px 45px rgba(0,0,0,.28); }
+}
+@media (max-width: 800px) {
+  .wallet-intro { display: block; padding-bottom: 78px; padding-top: 70px; }
+  .wallet-intro-copy h1 { font-size: clamp(65px, 18vw, 105px); }
+  .wallet-lead { font-size: 15px; margin-top: 38px; }
+  .wallet-intro-aside { margin-top: 82px; }
+  .wallet-intro-aside > p { margin-bottom: 42px; }
+  .wallet-story { padding-bottom: 90px; padding-top: 90px; }
+  .wallet-section-heading { display: block; margin-bottom: 48px; }
+  .wallet-section-heading h2 { margin: 36px 0 27px; }
+  .wallet-screenshot-grid { gap: 38px 16px; grid-template-columns: repeat(2, 1fr); }
+  .wallet-shot { border-radius: 17px; }
+  .wallet-shot-caption h3 { font-size: 14px; line-height: 1.25; }
+  .wallet-features { display: block; padding-bottom: 90px; padding-top: 90px; }
+  .wallet-feature-intro h2 { margin: 34px 0 57px; }
+  .wallet-feature-list article { gap: 12px; grid-template-columns: 25px 1fr; }
+  .wallet-feature-list h3 { font-size: 17px; }
+  .wallet-feature-list p { font-size: 12px; }
+  .wallet-privacy-note { display: block; padding-bottom: 90px; padding-top: 90px; }
+  .wallet-privacy-points { margin-top: 60px; }
+}
+
+.mintwallet-policy-page { background: #101716; color: #f4f5f2; }
+.mintwallet-policy-page .policy-container { max-width: 1180px; }
+.mintwallet-policy-page .policy-back-link { color: #51dfc8; }
+.mintwallet-policy-page .policy-back-link:hover { color: #8cf1e2; }
+.mintwallet-policy-page h1 { color: #f4f5f2; font-size: clamp(42px, 7vw, 88px); letter-spacing: -.1em; text-align: left; }
+.mintwallet-policy-page .policy-effective-date { color: #7c9992; text-align: left; }
+.mintwallet-policy-grid { display: grid; gap: 70px; grid-template-columns: 1fr 1fr; }
+.mintwallet-policy-column { border-top: 1px solid #30413f; }
+.mintwallet-policy-column > h2 { color: #51dfc8; font-size: 12px; font-weight: 400; letter-spacing: .08em; margin: 0; padding: 17px 0 5px; text-transform: uppercase; }
+.mintwallet-policy-section { border-top: 1px solid #30413f; padding: 22px 0 24px; }
+.mintwallet-policy-section h3 { color: #f4f5f2; font-size: 16px; font-weight: 500; letter-spacing: -.04em; margin: 0 0 10px; }
+.mintwallet-policy-section p { color: #a9b9b3; font-size: 13px; line-height: 1.8; margin: 0; }
+@media (max-width: 800px) {
+  .mintwallet-policy-page h1 { font-size: 47px; }
+  .mintwallet-policy-grid { display: block; }
+  .mintwallet-policy-column + .mintwallet-policy-column { margin-top: 55px; }
+}

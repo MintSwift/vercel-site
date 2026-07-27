@@ -1,12 +1,109 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import ProjectBanner from "../components/ProjectBanner";
 
 export const metadata: Metadata = {
-  title: "MintWallet — CoolMint",
-  description: "돈의 움직임을 가볍게 정리하는 개인 금융 경험.",
+  title: "MintWallet — Personal information, kept safe | CoolMint",
+  description: "카드·계좌·구독·개인정보를 한곳에 안전하게 정리하는 나만의 디지털 지갑.",
 };
 
+const appShots = [
+  { src: "/mintwallet/01.png", number: "01", label: "Widgets", title: "다음 결제와 순위를 한눈에" },
+  { src: "/mintwallet/02.png", number: "02", label: "Cards", title: "모든 카드를 깔끔하게 정리" },
+  { src: "/mintwallet/03.png", number: "03", label: "Card details", title: "필요한 정보만 빠르게 확인" },
+  { src: "/mintwallet/04.png", number: "04", label: "Bank accounts", title: "계좌번호도 안전하게 보관" },
+  { src: "/mintwallet/05.png", number: "05", label: "Account details", title: "복사하고 확인하는 계좌 정보" },
+  { src: "/mintwallet/06.png", number: "06", label: "Subscriptions", title: "구독 결제일과 지출을 한곳에" },
+  { src: "/mintwallet/07.png", number: "07", label: "Subscription details", title: "다음 결제를 미리 준비" },
+  { src: "/mintwallet/08.png", number: "08", label: "Personal information", title: "중요한 신분 정보를 정리" },
+  { src: "/mintwallet/09.png", number: "09", label: "Passport", title: "여권 정보도 필요할 때 바로" },
+  { src: "/mintwallet/10.png", number: "10", label: "Driver license", title: "자격증명 정보를 안전하게" },
+  { src: "/mintwallet/11.png", number: "11", label: "Backup & security", title: "백업과 잠금 방식을 직접 관리" },
+];
+
 export default function MintWalletPage() {
-  return <main className="case-page case-wallet"><header className="site-header page-shell"><Link className="brand" href="/"><span className="brand-mark" aria-hidden="true">✦</span>CoolMint</Link><Link className="back-link" href="/">Back to portfolio <span aria-hidden="true">↗</span></Link></header><ProjectBanner projectName="MintWallet" /><section className="case-hero page-shell"><p className="eyebrow"><span className="eyebrow-dot" /> Case study · 2023</p><h1>MintWallet<em> / A calmer way to keep score.</em></h1><p className="case-intro">돈을 잘 관리한다는 건 더 자주 확인하는 일이 아니라, 내 상태를 편안하게 아는 일에서 시작합니다.</p><a className="button app-store-button" href="https://apps.apple.com/kr/app/%EB%AF%BC%ED%8A%B8%EC%A7%80%EA%B0%91/id1532835617" target="_blank" rel="noreferrer">App Store에서 다운로드 <span aria-hidden="true">↗</span></a><div className="case-art wallet-art"><div className="wallet-shape"><span className="wallet-chip">M</span><span className="wallet-balance">₩ 2,480,000</span><span className="wallet-label">AVAILABLE BALANCE</span></div><div className="wallet-orbit" /></div></section><section className="case-body page-shell"><div className="case-facts"><span>Role</span><strong>Product design<br />Development</strong><span>Platform</span><strong>iPhone</strong><span>Year</span><strong>2023</strong></div><div className="case-copy"><p className="section-kicker">The idea</p><h2>Money, made human.</h2><p>민트월렛은 숫자와 그래프 사이에 숨어 있던 사용자의 마음을 먼저 생각합니다. 부담 없이 열어보고, 한눈에 이해하고, 작게 행동할 수 있도록 설계했습니다.</p><div className="case-columns"><div><b>01</b><h3>One clear picture</h3><p>흩어진 자산과 지출을 하나의 차분한 화면으로 정리합니다.</p></div><div><b>02</b><h3>Small next steps</h3><p>오늘 할 수 있는 작은 행동으로 건강한 습관을 시작합니다.</p></div></div></div></section><footer className="case-footer page-shell"><Link href="/overtake">Previous project <span aria-hidden="true">←</span></Link><Link href="/">Back home <span aria-hidden="true">↗</span></Link></footer></main>;
+  return (
+    <main className="case-page case-wallet">
+      <header className="site-header page-shell">
+        <Link className="brand" href="/">
+          <span className="brand-mark" aria-hidden="true">✦</span>CoolMint
+        </Link>
+        <Link className="back-link" href="/">Back to portfolio <span aria-hidden="true">↗</span></Link>
+      </header>
+      <ProjectBanner projectName="MintWallet" />
+
+      <section className="wallet-intro page-shell">
+        <div className="wallet-intro-copy">
+          <p className="eyebrow"><span className="eyebrow-dot" /> Personal finance · private by design</p>
+          <h1>Your details,<br /><em>in your hands.</em></h1>
+          <p className="wallet-lead">구독 결제일과 지출부터 카드·계좌·개인정보까지, 흩어진 중요한 정보를 한 곳에 안전하고 보기 좋게 정리하세요.</p>
+          <a className="button app-store-button" href="https://apps.apple.com/kr/app/id1532835617" target="_blank" rel="noreferrer">
+            App Store에서 다운로드 <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <div className="wallet-intro-aside">
+          <p>민트월렛은 서버에 정보를 보내지 않는 독립 실행형 앱입니다. 내 정보는 내가 보관하고, 필요할 때만 꺼내 봅니다.</p>
+          <div className="wallet-metadata">
+            <span>Platform</span><strong>iPhone · iPad</strong>
+            <span>Requires</span><strong>iOS 17.0+</strong>
+            <span>Languages</span><strong>한국어 · English · 日本語</strong>
+          </div>
+        </div>
+      </section>
+
+      <section className="wallet-story page-shell">
+        <div className="wallet-section-heading">
+          <p className="section-kicker">One calm place for the important things</p>
+          <h2>Less searching.<br /><em>More knowing.</em></h2>
+          <p>카드, 계좌, 구독, 신분증. 각각의 정보를 따로 찾아 헤매지 않도록 필요한 맥락을 한 화면에 담았습니다.</p>
+        </div>
+        <div className="wallet-screenshot-grid">
+          {appShots.map((shot) => (
+            <article className="wallet-shot-card" key={shot.src}>
+              <div className="wallet-shot">
+                <Image src={shot.src} alt={shot.title} width={1206} height={2622} sizes="(max-width: 800px) 86vw, 28vw" />
+              </div>
+              <div className="wallet-shot-caption">
+                <span>{shot.number} / {shot.label}</span>
+                <h3>{shot.title}</h3>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="wallet-features page-shell">
+        <div className="wallet-feature-intro">
+          <p className="section-kicker">A wallet for real life</p>
+          <h2>정리는 가볍게.<br /><em>보호는 단단하게.</em></h2>
+        </div>
+        <div className="wallet-feature-list">
+          <article><span>01</span><div><h3>구독과 지출 관리</h3><p>다음 결제일, 결제 금액, 월 예상 지출을 한눈에 보고 결제일 알림으로 미리 준비하세요.</p></div></article>
+          <article><span>02</span><div><h3>카드와 계좌 보관</h3><p>여러 장의 카드와 은행 계좌 정보를 한곳에 모으고 필요한 내용을 빠르게 확인하고 복사할 수 있습니다.</p></div></article>
+          <article><span>03</span><div><h3>개인정보 정리</h3><p>주민등록증, 운전면허증, 여권, 통관고유부호처럼 자주 필요하지만 쉽게 찾기 어려운 정보를 정리합니다.</p></div></article>
+          <article><span>04</span><div><h3>암호화 백업</h3><p>중요한 데이터를 암호화된 파일로 직접 내보내 원하는 곳에 보관하고, 필요할 때 다시 복원하세요.</p></div></article>
+          <article><span>05</span><div><h3>나에게 맞는 보호</h3><p>Face ID·Touch ID, 앱 잠금, 다크 모드, 위젯으로 안전함과 편리함의 균형을 직접 설정합니다.</p></div></article>
+        </div>
+      </section>
+
+      <section className="wallet-privacy-note page-shell">
+        <div>
+          <p className="section-kicker">Private by design</p>
+          <h2>내 정보는<br /><em>내가 보관합니다.</em></h2>
+        </div>
+        <div className="wallet-privacy-points">
+          <p>민트월렛은 개인정보를 수집하거나 별도의 서버에 저장하지 않습니다. 저장한 정보는 기기에서 관리되며, 백업 파일은 사용자가 설정한 비밀번호로 암호화됩니다.</p>
+          <div><span>01</span><strong>서버에 저장하지 않음</strong></div>
+          <div><span>02</span><strong>암호화된 백업 파일</strong></div>
+          <div><span>03</span><strong>Face ID · Touch ID</strong></div>
+        </div>
+      </section>
+
+      <footer className="case-footer page-shell">
+        <div className="case-policy-links"><Link href="/mintwallet/privacy-policy">Privacy Policy</Link><Link href="/mintwallet/terms">Terms of Use</Link></div>
+        <Link href="/overtake">Next project <span aria-hidden="true">→</span></Link>
+      </footer>
+    </main>
+  );
 }
