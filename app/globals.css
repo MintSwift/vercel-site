@@ -79,3 +79,64 @@ h1, h2, h3, p { margin-top: 0; } em { color: #85837b; font-family: Georgia, 'Tim
   .policy-page h1 { font-size: 1.9rem; }
   .policy-lang-grid { grid-template-columns: 1fr; gap: 18px; }
 }
+
+.overtake-intro { border-bottom: 1px solid var(--line); display: grid; gap: 10%; grid-template-columns: 1.15fr .85fr; padding-bottom: 125px; padding-top: 115px; }
+.overtake-intro-copy h1 { font-size: clamp(70px, 10vw, 142px); font-weight: 500; letter-spacing: -.11em; line-height: .82; margin: 0; }
+.overtake-intro-copy h1 em { display: block; font-size: .72em; letter-spacing: -.1em; margin-top: 17px; }
+.overtake-lead { color: #55544d; font-size: 17px; line-height: 1.75; margin: 52px 0 0; max-width: 440px; }
+.overtake-intro .app-store-button { margin: 33px 0 0; }
+.overtake-intro-aside { align-self: end; border-top: 1px solid var(--line); padding-top: 17px; }
+.overtake-intro-aside > p { color: var(--ink-soft); font-size: 15px; line-height: 1.75; margin: 0 0 68px; max-width: 330px; }
+.overtake-metadata { display: grid; gap: 10px 25px; grid-template-columns: 1fr 1fr; }
+.overtake-metadata span { color: var(--ink-soft); font-size: 10px; text-transform: uppercase; }
+.overtake-metadata strong { font-size: 13px; font-weight: 400; }
+.overtake-story { padding-bottom: 150px; padding-top: 145px; }
+.overtake-section-heading { display: grid; gap: 12%; grid-template-columns: .8fr 1fr 1fr; margin-bottom: 72px; }
+.overtake-section-heading .section-kicker { margin: 4px 0 0; }
+.overtake-section-heading h2, .overtake-feature-intro h2, .overtake-note h2 { font-size: clamp(45px, 5.8vw, 78px); font-weight: 500; letter-spacing: -.1em; line-height: .88; margin: 0; }
+.overtake-section-heading h2 em, .overtake-feature-intro h2 em, .overtake-note h2 em { display: block; margin-top: 13px; }
+.overtake-section-heading > p:last-child { color: var(--ink-soft); font-size: 14px; line-height: 1.75; margin: 3px 0 0; max-width: 275px; }
+.overtake-screenshot-grid { display: grid; gap: 55px 24px; grid-template-columns: repeat(3, 1fr); }
+.overtake-shot-card { min-width: 0; }
+.overtake-shot { background: #f0f0f4; border-radius: 28px; box-shadow: 0 18px 45px rgba(17,17,15,.08); overflow: hidden; }
+.overtake-shot img { display: block; height: auto; width: 100%; }
+.overtake-shot-caption { border-top: 1px solid var(--line); padding-top: 14px; }
+.overtake-shot-caption > span { color: var(--ink-soft); font-size: 10px; text-transform: uppercase; }
+.overtake-shot-caption h3 { font-size: 16px; font-weight: 500; letter-spacing: -.045em; margin: 13px 0 0; }
+.overtake-features { background: var(--dark); color: #f5f4ef; display: grid; gap: 12%; grid-template-columns: .9fr 1.1fr; padding-bottom: 140px; padding-top: 140px; }
+.overtake-features .section-kicker { color: #85857d; }
+.overtake-feature-intro h2 em { color: var(--acid); }
+.overtake-feature-list { border-top: 1px solid #343934; }
+.overtake-feature-list article { border-bottom: 1px solid #343934; display: grid; gap: 25px; grid-template-columns: 32px 1fr; padding: 25px 0 29px; }
+.overtake-feature-list article > span { color: var(--acid); font-size: 10px; }
+.overtake-feature-list h3 { font-size: 19px; font-weight: 500; letter-spacing: -.05em; margin: -4px 0 9px; }
+.overtake-feature-list p { color: #9da59f; font-size: 13px; line-height: 1.7; margin: 0; max-width: 425px; }
+.overtake-note { align-items: end; display: grid; gap: 15%; grid-template-columns: 1fr 1fr; padding-bottom: 145px; padding-top: 145px; }
+.overtake-note .section-kicker { margin-bottom: 29px; }
+.overtake-note > p { border-top: 1px solid var(--line); color: var(--ink-soft); font-size: 13px; line-height: 1.8; margin: 0; padding-top: 17px; }
+.case-contact-card .contact-button { border: 1px solid transparent; }
+@media (prefers-color-scheme: dark) {
+  .overtake-lead { color: #aeb4b1; }
+  .overtake-shot { background: #e9e9ee; box-shadow: 0 18px 45px rgba(0,0,0,.28); }
+  .case-contact-card .contact-button { background: #f4f5f2; border-color: #f4f5f2; color: #080a0b; }
+}
+@media (max-width: 800px) {
+  .overtake-intro { display: block; padding-bottom: 78px; padding-top: 70px; }
+  .overtake-intro-copy h1 { font-size: clamp(65px, 18vw, 105px); }
+  .overtake-lead { font-size: 15px; margin-top: 38px; }
+  .overtake-intro-aside { margin-top: 82px; }
+  .overtake-intro-aside > p { margin-bottom: 42px; }
+  .overtake-story { padding-bottom: 90px; padding-top: 90px; }
+  .overtake-section-heading { display: block; margin-bottom: 48px; }
+  .overtake-section-heading h2 { margin: 36px 0 27px; }
+  .overtake-screenshot-grid { gap: 38px 16px; grid-template-columns: repeat(2, 1fr); }
+  .overtake-shot { border-radius: 17px; }
+  .overtake-shot-caption h3 { font-size: 14px; line-height: 1.25; }
+  .overtake-features { display: block; padding-bottom: 90px; padding-top: 90px; }
+  .overtake-feature-intro h2 { margin: 34px 0 57px; }
+  .overtake-feature-list article { gap: 12px; grid-template-columns: 25px 1fr; }
+  .overtake-feature-list h3 { font-size: 17px; }
+  .overtake-feature-list p { font-size: 12px; }
+  .overtake-note { display: block; padding-bottom: 90px; padding-top: 90px; }
+  .overtake-note > p { margin-top: 60px; }
+}
