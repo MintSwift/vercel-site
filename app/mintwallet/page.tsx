@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import AppStoreButton from "../components/AppStoreButton";
 import ProjectBanner from "../components/ProjectBanner";
 
 export const metadata: Metadata = {
@@ -38,9 +39,7 @@ export default function MintWalletPage() {
           <p className="eyebrow"><span className="eyebrow-dot" /> Personal finance · private by design</p>
           <h1>Your details,<br /><em>in your hands.</em></h1>
           <p className="wallet-lead">구독 결제일과 지출부터 카드·계좌·개인정보까지, 흩어진 중요한 정보를 한 곳에 안전하고 보기 좋게 정리하세요.</p>
-          <a className="button app-store-button" href="https://apps.apple.com/kr/app/id1532835617" target="_blank" rel="noreferrer">
-            App Store에서 다운로드 <span aria-hidden="true">↗</span>
-          </a>
+          <AppStoreButton href="https://apps.apple.com/kr/app/id1532835617" locale="ko-kr" />
         </div>
         <div className="wallet-intro-aside">
           <p>민트월렛은 서버에 정보를 보내지 않는 독립 실행형 앱입니다. 내 정보는 내가 보관하고, 필요할 때만 꺼내 봅니다.</p>

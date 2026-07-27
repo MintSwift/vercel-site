@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import AppStoreButton from "../components/AppStoreButton";
 import ContactButton from "../components/ContactButton";
 import ProjectBanner from "../components/ProjectBanner";
 
@@ -34,9 +35,7 @@ export default function OvertakePage() {
           <p className="eyebrow"><span className="eyebrow-dot" /> Race results · 2026 season</p>
           <h1>Stay ahead<br /><em>of the race.</em></h1>
           <p className="overtake-lead">속도, 전략, 그리고 한순간의 선택이 흐름을 바꾸는 레이스 시즌을 더 선명하게 따라가세요.</p>
-          <a className="button app-store-button" href="https://apps.apple.com/us/app/overtake-race-results/id6760613857" target="_blank" rel="noreferrer">
-            App Store에서 다운로드 <span aria-hidden="true">↗</span>
-          </a>
+          <AppStoreButton href="https://apps.apple.com/us/app/overtake-race-results/id6760613857" />
         </div>
         <div className="overtake-intro-aside">
           <p>Overtake는 단순한 일정표가 아니라, 시즌 전체의 흐름을 따라가기 위한 레이스 동반자입니다.</p>
