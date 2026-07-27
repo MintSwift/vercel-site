@@ -55,6 +55,12 @@ h1, h2, h3, p { margin-top: 0; } em { color: #85837b; font-family: Georgia, 'Tim
 }
 @media (max-width: 800px) { .project-banner { padding-left: 0; padding-right: 0; }.banner-footer { padding-left: 20px; padding-right: 20px; }.banner-caption { display: none; }.banner-controls { bottom: 12px; right: 14px; }.banner-controls button { height: 30px; width: 30px; }.banner-dots { position: static; transform: none; } }
 .case-policy-links { display: flex; gap: 22px; }
+.case-contact { padding-bottom: 80px; }
+.case-contact-card { background: #161817; color: #fff; padding: 56px 8%; }
+.case-contact-card .section-kicker { color: #85857d; }
+.case-contact-card h2 { color: #fff; font-size: clamp(42px, 6vw, 78px); font-weight: 500; letter-spacing: -.1em; line-height: .9; margin: 0 0 18px; }
+.case-contact-card > p:not(.section-kicker) { color: #bfc4bf; font-size: 15px; line-height: 1.7; margin-bottom: 28px; }
+.contact-button { margin-top: 0; }
 .policy-page { background: #0d0d0d; color: #fff; min-height: 100vh; padding: 40px 20px; }
 .policy-container { margin: 0 auto; max-width: 900px; }
 .policy-back-link { color: #e10600; display: inline-block; font-weight: 600; margin-bottom: 20px; }
@@ -67,6 +73,8 @@ h1, h2, h3, p { margin-top: 0; } em { color: #85837b; font-family: Georgia, 'Tim
 .policy-section a { color: #e10600; }
 @media (max-width: 800px) {
   .case-policy-links { flex-direction: column; gap: 10px; }
+  .case-contact { padding-bottom: 55px; }
+  .case-contact-card { padding: 42px 26px 48px; }
   .policy-page { padding: 26px 20px; }
   .policy-page h1 { font-size: 1.9rem; }
   .policy-lang-grid { grid-template-columns: 1fr; gap: 18px; }

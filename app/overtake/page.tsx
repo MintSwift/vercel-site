@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ContactButton from "../components/ContactButton";
 import ProjectBanner from "../components/ProjectBanner";
 
 export const metadata: Metadata = {
@@ -29,6 +30,14 @@ export default function OvertakePage() {
       <section className="case-body page-shell">
         <div className="case-facts"><span>Role</span><strong>Product design<br />Development</strong><span>Platform</span><strong>iPhone · iPad</strong><span>Year</span><strong>2024</strong></div>
         <div className="case-copy"><p className="section-kicker">The idea</p><h2>Signal over noise.</h2><p>오버테이크는 경기의 모든 데이터를 보여주는 대신, 지금의 흐름을 이해하는 데 필요한 순간만 골라 보여줍니다. 빠른 스코어, 짧은 맥락, 다음 장면을 위한 정보.</p><div className="case-columns"><div><b>01</b><h3>Live, not loud</h3><p>시선을 빼앗지 않고도 경기의 변화가 손끝에 느껴지는 인터페이스.</p></div><div><b>02</b><h3>Made for rhythm</h3><p>경기 전, 경기 중, 경기 후. 각각의 리듬에 맞춘 정보 구조.</p></div></div></div>
+      </section>
+      <section className="case-contact page-shell">
+        <div className="case-contact-card">
+          <p className="section-kicker">Have feedback?</p>
+          <h2>문의하기</h2>
+          <p>서비스 제안, 오류 제보를 남겨주세요.</p>
+          <ContactButton />
+        </div>
       </section>
       <footer className="case-footer page-shell">
         <div className="case-policy-links"><Link href="/overtake/privacy.html">Privacy Policy</Link><Link href="/overtake/terms.html">Terms of Service</Link></div>
