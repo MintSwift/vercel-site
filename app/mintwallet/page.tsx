@@ -9,17 +9,17 @@ export const metadata: Metadata = {
 };
 
 const appShots = [
-  { src: "/mintwallet/01.png", number: "01", label: "Widgets", title: "다음 결제와 순위를 한눈에" },
-  { src: "/mintwallet/02.png", number: "02", label: "Cards", title: "모든 카드를 깔끔하게 정리" },
-  { src: "/mintwallet/03.png", number: "03", label: "Card details", title: "필요한 정보만 빠르게 확인" },
-  { src: "/mintwallet/04.png", number: "04", label: "Bank accounts", title: "계좌번호도 안전하게 보관" },
-  { src: "/mintwallet/05.png", number: "05", label: "Account details", title: "복사하고 확인하는 계좌 정보" },
-  { src: "/mintwallet/06.png", number: "06", label: "Subscriptions", title: "구독 결제일과 지출을 한곳에" },
-  { src: "/mintwallet/07.png", number: "07", label: "Subscription details", title: "다음 결제를 미리 준비" },
-  { src: "/mintwallet/08.png", number: "08", label: "Personal information", title: "중요한 신분 정보를 정리" },
-  { src: "/mintwallet/09.png", number: "09", label: "Passport", title: "여권 정보도 필요할 때 바로" },
-  { src: "/mintwallet/10.png", number: "10", label: "Driver license", title: "자격증명 정보를 안전하게" },
-  { src: "/mintwallet/11.png", number: "11", label: "Backup & security", title: "백업과 잠금 방식을 직접 관리" },
+  { src: "/mintwallet/01.png", number: "01", label: "Widgets", title: "다음 결제와 순위를 한눈에", description: "앱을 열지 않아도 다음 구독 일정과 팀 선택, 주요 순위를 홈 화면에서 바로 확인할 수 있습니다." },
+  { src: "/mintwallet/02.png", number: "02", label: "Cards", title: "모든 카드를 깔끔하게 정리", description: "여러 장의 신용카드와 체크카드를 한 화면에서 보고, 카드사와 마지막 네 자리를 빠르게 찾습니다." },
+  { src: "/mintwallet/03.png", number: "03", label: "Card details", title: "필요한 정보만 빠르게 확인", description: "카드번호와 CVC 같은 민감한 정보는 잠금 상태로 보관하고, 필요할 때만 인증 후 확인합니다." },
+  { src: "/mintwallet/04.png", number: "04", label: "Bank accounts", title: "계좌번호도 안전하게 보관", description: "흩어진 은행 계좌를 정리해 급하게 송금하거나 정보를 전달해야 할 때 헤매지 않도록 합니다." },
+  { src: "/mintwallet/05.png", number: "05", label: "Account details", title: "복사하고 확인하는 계좌 정보", description: "계좌번호, 비밀번호, 보안카드처럼 함께 관리해야 하는 정보를 한곳에서 보호합니다." },
+  { src: "/mintwallet/06.png", number: "06", label: "Subscriptions", title: "구독 결제일과 지출을 한곳에", description: "월 예상 지출과 구독 개수를 한눈에 보고, 서비스별 결제 금액과 다음 결제일을 비교합니다." },
+  { src: "/mintwallet/07.png", number: "07", label: "Subscription details", title: "다음 결제를 미리 준비", description: "환율과 결제 주기까지 포함한 구독 상세 정보로 매달 반복되는 지출을 더 선명하게 관리합니다." },
+  { src: "/mintwallet/08.png", number: "08", label: "Personal information", title: "중요한 신분 정보를 정리", description: "주민등록증, 운전면허증, 여권, 통관고유부호를 각각의 목적에 맞게 정리해 필요할 때 바로 찾습니다." },
+  { src: "/mintwallet/09.png", number: "09", label: "Passport", title: "여권 정보도 필요할 때 바로", description: "여권번호와 발급·만료일을 보호된 카드 형태로 보관하고 필요한 항목만 확인할 수 있습니다." },
+  { src: "/mintwallet/10.png", number: "10", label: "Driver license", title: "자격증명 정보를 안전하게", description: "운전면허번호와 보안카드 등 외우기 어려운 정보를 앱 잠금 뒤에 두고 관리합니다." },
+  { src: "/mintwallet/11.png", number: "11", label: "Backup & security", title: "백업과 잠금 방식을 직접 관리", description: "암호화 백업, iCloud 저장, 자동 백업, 앱 잠금과 화면 모드까지 내 사용 방식에 맞게 설정합니다." },
 ];
 
 export default function MintWalletPage() {
@@ -58,15 +58,20 @@ export default function MintWalletPage() {
           <h2>Less searching.<br /><em>More knowing.</em></h2>
           <p>카드, 계좌, 구독, 신분증. 각각의 정보를 따로 찾아 헤매지 않도록 필요한 맥락을 한 화면에 담았습니다.</p>
         </div>
-        <div className="wallet-screenshot-grid">
+        <div className="wallet-screenshot-list">
           {appShots.map((shot) => (
-            <article className="wallet-shot-card" key={shot.src}>
-              <div className="wallet-shot">
-                <Image src={shot.src} alt={shot.title} width={1206} height={2622} sizes="(max-width: 800px) 86vw, 28vw" />
+            <article className="wallet-showcase-row" key={shot.src}>
+              <div className="wallet-showcase-media">
+                <div className="wallet-shot">
+                  <Image src={shot.src} alt={shot.title} width={1206} height={2622} sizes="(max-width: 800px) 82vw, 36vw" />
+                </div>
               </div>
-              <div className="wallet-shot-caption">
-                <span>{shot.number} / {shot.label}</span>
+              <div className="wallet-showcase-copy">
+                <span className="wallet-showcase-number">{shot.number}</span>
+                <p className="wallet-showcase-label">{shot.label}</p>
                 <h3>{shot.title}</h3>
+                <p className="wallet-showcase-description">{shot.description}</p>
+                <span className="wallet-showcase-rule" aria-hidden="true" />
               </div>
             </article>
           ))}
