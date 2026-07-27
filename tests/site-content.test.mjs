@@ -15,7 +15,11 @@ test("portfolio routes and metadata are present", async () => {
   assert.match(files[1], /vercel-header-mintwallet-white-layout-v2\.png/);
   assert.match(files[1], /vercel-header-mintwallet-black-layout-v2\.png/);
   assert.match(files[2], /Overtake/);
+  assert.match(files[2], /ProjectBanner/);
+  assert.match(files[2], /id6760613857/);
   assert.match(files[3], /MintWallet/);
+  assert.match(files[3], /ProjectBanner/);
+  assert.match(files[3], /id1532835617/);
   assert.match(files[4], /lang="ko"/);
   assert.equal(JSON.parse(files[5]).framework, "nextjs");
 });
