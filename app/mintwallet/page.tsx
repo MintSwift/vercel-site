@@ -67,8 +67,7 @@ export default function MintWalletPage() {
                 </div>
               </div>
               <div className="wallet-showcase-copy">
-                <span className="wallet-showcase-number">{shot.number}</span>
-                <p className="wallet-showcase-label">{shot.label}</p>
+                <div className="wallet-showcase-meta"><span>{shot.number}</span><span>{shot.label}</span></div>
                 <h3>{shot.title}</h3>
                 <p className="wallet-showcase-description">{shot.description}</p>
                 <span className="wallet-showcase-rule" aria-hidden="true" />
