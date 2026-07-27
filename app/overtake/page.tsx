@@ -17,7 +17,7 @@ export default function OvertakePage() {
         </Link>
         <Link className="back-link" href="/">Back to portfolio <span aria-hidden="true">↗</span></Link>
       </header>
-      <ProjectBanner />
+      <ProjectBanner projectName="Overtake" />
       <section className="case-hero page-shell">
         <p className="eyebrow"><span className="eyebrow-dot" /> Case study · 2024</p>
         <h1>Overtake<em> / Read the game as it moves.</em></h1>

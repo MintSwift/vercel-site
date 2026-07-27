@@ -17,6 +17,7 @@ test("portfolio routes and metadata are present", async () => {
   assert.match(files[2], /FORM_URL/);
   assert.match(files[3], /Overtake/);
   assert.match(files[3], /ProjectBanner/);
+  assert.match(files[3], /projectName="Overtake"/);
   assert.match(files[3], /ContactButton/);
   assert.match(files[3], /id6760613857/);
   assert.match(files[4], /privacySections/);
@@ -25,6 +26,7 @@ test("portfolio routes and metadata are present", async () => {
   assert.match(files[6], /이용약관/);
   assert.match(files[7], /MintWallet/);
   assert.match(files[7], /ProjectBanner/);
+  assert.match(files[7], /projectName="MintWallet"/);
   assert.match(files[7], /id1532835617/);
   assert.match(files[8], /lang="ko"/);
   assert.equal(JSON.parse(files[9]).framework, "nextjs");

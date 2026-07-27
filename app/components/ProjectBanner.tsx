@@ -20,28 +20,34 @@ const banners = [
   },
 ];
 
+type BannerName = "Overtake" | "MintWallet";
+type ProjectBannerProps = { projectName?: BannerName };
+
 const AUTOPLAY_DELAY = 5500;
 
-export default function ProjectBanner() {
+export default function ProjectBanner({ projectName }: ProjectBannerProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const displayedBanners = projectName === "Overtake" ? [banners[0]] : projectName === "MintWallet" ? [banners[1]] : banners;
+  const bannerCount = displayedBanners.length;
+  const hasCarousel = bannerCount > 1;
 
   useEffect(() => {
-    if (isPaused) return;
+    if (isPaused || !hasCarousel) return;
 
     const timer = window.setInterval(() => {
-      setActiveIndex((current) => (current + 1) % banners.length);
+      setActiveIndex((current) => (current + 1) % bannerCount);
     }, AUTOPLAY_DELAY);
 
     return () => window.clearInterval(timer);
-  }, [isPaused]);
+  }, [bannerCount, hasCarousel, isPaused]);
 
   const selectBanner = (index: number) => {
     setActiveIndex(index);
   };
 
   const move = (direction: number) => {
-    setActiveIndex((current) => (current + direction + banners.length) % banners.length);
+    setActiveIndex((current) => (current + direction + bannerCount) % bannerCount);
   };
 
   return (
@@ -58,7 +64,7 @@ export default function ProjectBanner() {
       }}
     >
       <div className="banner-viewport">
-        {banners.map((banner, index) => (
+        {displayedBanners.map((banner, index) => (
           <a
             className={`banner-slide ${index === activeIndex ? "is-active" : ""}`}
             href={banner.href}
@@ -86,23 +92,17 @@ export default function ProjectBanner() {
           </a>
         ))}
 
-        <div className="banner-controls">
-          <button type="button" onClick={() => move(-1)} aria-label="이전 프로젝트 배너">
-            ←
-          </button>
-          <span className="banner-count" aria-live="polite">
-            0{activeIndex + 1} / 0{banners.length}
-          </span>
-          <button type="button" onClick={() => move(1)} aria-label="다음 프로젝트 배너">
-            →
-          </button>
-        </div>
+        {hasCarousel && <div className="banner-controls">
+          <button type="button" onClick={() => move(-1)} aria-label="이전 프로젝트 배너">←</button>
+          <span className="banner-count" aria-live="polite">0{activeIndex + 1} / 0{bannerCount}</span>
+          <button type="button" onClick={() => move(1)} aria-label="다음 프로젝트 배너">→</button>
+        </div>}
       </div>
 
       <div className="banner-footer">
-        <span>{banners[activeIndex].name}</span>
-        <div className="banner-dots" aria-label="프로젝트 배너 선택">
-          {banners.map((banner, index) => (
+        <span>{displayedBanners[activeIndex].name}</span>
+        {hasCarousel && <div className="banner-dots" aria-label="프로젝트 배너 선택">
+          {displayedBanners.map((banner, index) => (
             <button
               type="button"
               key={banner.name}
@@ -112,7 +112,7 @@ export default function ProjectBanner() {
               aria-current={index === activeIndex ? "true" : undefined}
             />
           ))}
-        </div>
+        </div>}
         <span className="banner-caption">Selected work · 2024—2026</span>
       </div>
     </section>
