@@ -264,11 +264,11 @@ h1, h2, h3, p { margin-top: 0; } em { color: #85837b; font-family: Georgia, 'Tim
 
 .astrowind-wallet-page { --aw-ink: #1f1b35; --aw-muted: #6d6b80; --aw-surface: #ffffff; --aw-soft: #f5f4ff; --aw-purple: #7657e8; --aw-mint: #1bc9b1; background: #fbfbfe; color: var(--aw-ink); }
 .astrowind-wallet-page .project-banner { margin-bottom: 0; }
-.astrowind-wallet-hero { align-items: center; background: radial-gradient(circle at 87% 24%, rgba(178,158,255,.45), transparent 34%), radial-gradient(circle at 68% 90%, rgba(116,237,218,.28), transparent 32%); display: grid; gap: 7%; grid-template-columns: .9fr 1.1fr; min-height: 690px; padding-bottom: 88px; padding-top: 100px; position: relative; }
+.astrowind-wallet-hero { align-items: center; background: radial-gradient(circle at 87% 24%, rgba(178,158,255,.45), transparent 34%), radial-gradient(circle at 68% 90%, rgba(116,237,218,.28), transparent 32%); display: grid; gap: 6%; grid-template-columns: 1.08fr .92fr; min-height: 690px; padding-bottom: 88px; padding-top: 100px; position: relative; }
 .astrowind-wallet-hero-copy { position: relative; z-index: 1; }
 .astrowind-wallet-pill { align-items: center; background: rgba(255,255,255,.78); border: 1px solid rgba(118,87,232,.2); border-radius: 999px; color: var(--aw-purple); display: inline-flex; font-size: 11px; gap: 8px; padding: 9px 14px; }
 .astrowind-wallet-pill span { color: var(--aw-mint); }
-.astrowind-wallet-hero h1 { font-size: clamp(54px, 7.4vw, 104px); font-weight: 500; letter-spacing: -.12em; line-height: .94; margin: 31px 0 28px; }
+.astrowind-wallet-hero h1 { font-size: clamp(52px, 6.2vw, 88px); font-weight: 500; letter-spacing: -.12em; line-height: .94; margin: 31px 0 28px; }
 .astrowind-wallet-hero h1 strong, .astrowind-wallet-section-intro h2 strong, .astrowind-wallet-security h2 strong, .astrowind-wallet-cta h2 strong { background: linear-gradient(100deg, #7053df 0%, #a873ed 45%, #22c9b2 100%); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: 500; }
 .astrowind-wallet-hero-copy > p { color: var(--aw-muted); font-size: 16px; line-height: 1.8; margin: 0; max-width: 430px; }
 .astrowind-wallet-actions { align-items: center; display: flex; flex-wrap: wrap; gap: 24px; margin-top: 34px; }
@@ -278,8 +278,10 @@ h1, h2, h3, p { margin-top: 0; } em { color: #85837b; font-family: Georgia, 'Tim
 .astrowind-wallet-proof { border-top: 1px solid rgba(118,87,232,.16); color: #9391a2; display: flex; flex-wrap: wrap; font-size: 10px; gap: 22px; margin-top: 54px; padding-top: 15px; }
 .astrowind-wallet-hero-art { min-height: 620px; position: relative; }
 .astrowind-wallet-glow { background: linear-gradient(140deg, rgba(121,91,237,.3), rgba(47,214,191,.4)); border-radius: 50%; filter: blur(22px); height: 70%; left: 18%; position: absolute; top: 13%; transform: rotate(-18deg); width: 60%; }
-.astrowind-wallet-hero-device { background: #f7f7fb; border: 7px solid rgba(255,255,255,.85); border-radius: 43px; box-shadow: 0 35px 80px rgba(67,51,139,.22); height: 580px; overflow: hidden; position: absolute; right: 19%; transform: rotate(4deg); width: 267px; z-index: 1; }
-.astrowind-wallet-hero-device img { height: auto; width: 100%; }
+.iphone-frame-shell { opacity: 0; transition: opacity .25s ease; }
+.iphone-frame-shell[data-ready="true"] { opacity: 1; }
+.iphone-device-screen { display: block; height: 100%; object-fit: fill; width: 100%; }
+.astrowind-wallet-hero-device { filter: drop-shadow(0 35px 45px rgba(67,51,139,.25)); position: absolute; right: 12%; top: 50%; transform: translateY(-50%) rotate(3deg); width: 300px; z-index: 1; }
 .astrowind-wallet-float { backdrop-filter: blur(12px); background: rgba(255,255,255,.8); border: 1px solid rgba(255,255,255,.9); border-radius: 13px; box-shadow: 0 12px 25px rgba(77,59,147,.13); color: var(--aw-ink); font-size: 11px; padding: 12px 15px; position: absolute; z-index: 2; }
 .astrowind-wallet-float-one { right: 1%; top: 23%; transform: rotate(6deg); }
 .astrowind-wallet-float-two { bottom: 20%; left: 4%; transform: rotate(-7deg); }
@@ -295,7 +297,7 @@ h1, h2, h3, p { margin-top: 0; } em { color: #85837b; font-family: Georgia, 'Tim
 .astrowind-wallet-section-intro h2, .astrowind-wallet-security h2, .astrowind-wallet-cta h2 { font-size: clamp(43px, 5.8vw, 78px); font-weight: 500; letter-spacing: -.11em; line-height: .95; margin: 21px 0 24px; }
 .astrowind-wallet-section-intro > p { color: var(--aw-muted); font-size: 14px; line-height: 1.8; margin: 0 auto; max-width: 500px; }
 .astrowind-wallet-feature-list { display: flex; flex-direction: column; gap: 28px; }
-.astrowind-wallet-feature { align-items: center; background: var(--aw-soft); border: 1px solid rgba(118,87,232,.1); border-radius: 27px; display: grid; gap: 8%; grid-template-columns: .8fr 1.2fr; min-height: 430px; overflow: hidden; padding: 52px clamp(28px, 6vw, 80px); }
+.astrowind-wallet-feature { align-items: center; background: var(--aw-soft); border: 1px solid rgba(118,87,232,.1); border-radius: 27px; display: grid; gap: 8%; grid-template-columns: .8fr 1.2fr; min-height: 430px; overflow: visible; padding: 52px clamp(28px, 6vw, 80px); }
 .astrowind-wallet-feature:nth-child(even) { background: #f0fbf8; grid-template-columns: 1.2fr .8fr; }
 .astrowind-wallet-feature:nth-child(even) .astrowind-wallet-feature-copy { order: 2; }
 .astrowind-wallet-feature:nth-child(even) .astrowind-wallet-feature-images { order: 1; }
@@ -305,11 +307,13 @@ h1, h2, h3, p { margin-top: 0; } em { color: #85837b; font-family: Georgia, 'Tim
 .astrowind-wallet-feature-copy .astrowind-wallet-eyebrow { margin-bottom: 18px; }
 .astrowind-wallet-feature-copy h3 { font-size: clamp(30px, 4vw, 55px); font-weight: 500; letter-spacing: -.1em; line-height: .98; margin: 0 0 24px; }
 .astrowind-wallet-feature-copy > p { color: var(--aw-muted); font-size: 14px; line-height: 1.8; margin: 0; max-width: 360px; }
-.astrowind-wallet-feature-images { align-items: end; display: flex; gap: 20px; justify-content: center; min-width: 0; }
-.astrowind-wallet-feature-image { background: #f7f7fb; border: 5px solid rgba(255,255,255,.85); border-radius: 25px; box-shadow: 0 22px 40px rgba(45,35,102,.16); max-height: 430px; overflow: hidden; width: min(45%, 215px); }
-.astrowind-wallet-feature-image:nth-child(2) { transform: translateY(30px); }
-.astrowind-wallet-feature-image:nth-child(3) { transform: translateY(11px); }
-.astrowind-wallet-feature-image img { display: block; height: auto; width: 100%; }
+.astrowind-wallet-feature-images { align-items: center; display: flex; gap: clamp(14px, 2vw, 24px); justify-content: center; min-width: 0; }
+.astrowind-wallet-feature-image { filter: drop-shadow(0 22px 24px rgba(45,35,102,.17)); flex: 0 1 205px; width: min(44%, 205px); }
+.astrowind-wallet-feature-image:first-child { transform: rotate(-1.5deg) translateY(5px); }
+.astrowind-wallet-feature-image:nth-child(2) { transform: rotate(1.5deg) translateY(-5px); }
+.astrowind-wallet-feature-images.is-trio { gap: 12px; }
+.astrowind-wallet-feature-images.is-trio .astrowind-wallet-feature-image { flex-basis: 160px; width: min(31%, 160px); }
+.astrowind-wallet-feature-images.is-trio .astrowind-wallet-feature-image:nth-child(3) { transform: rotate(.8deg) translateY(4px); }
 .astrowind-wallet-security { align-items: center; background: #17142b; border-radius: 30px; color: #f9f8ff; display: grid; gap: 10%; grid-template-columns: 1fr 1fr; margin-bottom: 150px; overflow: hidden; padding-bottom: 90px; padding-top: 90px; position: relative; }
 .astrowind-wallet-security-copy { padding-left: clamp(0px, 4vw, 50px); position: relative; z-index: 1; }
 .astrowind-wallet-security .astrowind-wallet-eyebrow { color: #bba9ff; }
@@ -347,9 +351,11 @@ h1, h2, h3, p { margin-top: 0; } em { color: #85837b; font-family: Georgia, 'Tim
   .astrowind-wallet-feature:nth-child(even) { background: #142824; }
   .astrowind-wallet-feature-3 { background: #2b1e1a !important; }
   .astrowind-wallet-feature-4 { background: #201a37 !important; }
-  .astrowind-wallet-feature-image { background: #f7f7fb; }
   .astrowind-wallet-faq-list, .astrowind-wallet-faq-list details { border-color: #2d2a3e; }
   .astrowind-wallet-cta { background: linear-gradient(110deg, #201c3b, #132a27); }
+}
+@media (max-width: 1100px) {
+  .astrowind-wallet-float { display: none !important; }
 }
 @media (max-width: 800px) {
   .astrowind-wallet-hero { display: block; min-height: 0; padding-bottom: 75px; padding-top: 78px; }
@@ -357,7 +363,7 @@ h1, h2, h3, p { margin-top: 0; } em { color: #85837b; font-family: Georgia, 'Tim
   .astrowind-wallet-hero-copy > p { font-size: 14px; }
   .astrowind-wallet-proof { gap: 10px 16px; line-height: 1.4; margin-top: 38px; }
   .astrowind-wallet-hero-art { min-height: 500px; margin-top: 40px; }
-  .astrowind-wallet-hero-device { height: 450px; right: 18%; width: 208px; }
+  .astrowind-wallet-hero-device { right: 16%; width: 230px; }
   .astrowind-wallet-float-one { right: 0; top: 22%; }
   .astrowind-wallet-float-two { bottom: 18%; left: 0; }
   .astrowind-wallet-value { gap: 16px; grid-template-columns: 1fr; }
@@ -369,7 +375,8 @@ h1, h2, h3, p { margin-top: 0; } em { color: #85837b; font-family: Georgia, 'Tim
   .astrowind-wallet-feature:nth-child(even) .astrowind-wallet-feature-copy, .astrowind-wallet-feature:nth-child(even) .astrowind-wallet-feature-images { order: initial; }
   .astrowind-wallet-feature-copy h3 { font-size: 38px; }
   .astrowind-wallet-feature-images { margin-top: 40px; }
-  .astrowind-wallet-feature-image { border-radius: 18px; max-height: 335px; width: min(44%, 150px); }
+  .astrowind-wallet-feature-image { flex-basis: 150px; width: min(44%, 150px); }
+  .astrowind-wallet-feature-images.is-trio .astrowind-wallet-feature-image { flex-basis: 105px; width: min(31%, 105px); }
   .astrowind-wallet-security { display: block; margin-bottom: 90px; padding: 50px 23px 0; }
   .astrowind-wallet-security-art { min-height: 330px; margin-top: 25px; }
   .astrowind-wallet-security-card { right: 8%; width: 270px; }

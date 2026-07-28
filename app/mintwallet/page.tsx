@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import AppStoreButton from "../components/AppStoreButton";
+import IPhoneFrame from "../components/IPhoneFrame";
 import ProjectBanner from "../components/ProjectBanner";
 
 export const metadata: Metadata = {
@@ -66,9 +66,14 @@ export default function MintWalletPage() {
         </div>
         <div className="astrowind-wallet-hero-art" aria-label="MintWallet 구독 화면 미리보기">
           <div className="astrowind-wallet-glow" />
-          <div className="astrowind-wallet-hero-device">
-            <Image src="/mintwallet/01.png" alt="MintWallet 위젯 화면" width={1206} height={2622} sizes="(max-width: 800px) 72vw, 32vw" priority />
-          </div>
+          <IPhoneFrame
+            alt="MintWallet 위젯 화면"
+            className="astrowind-wallet-hero-device"
+            mode="dark"
+            priority
+            sizes="(max-width: 800px) 62vw, 300px"
+            src="/mintwallet/01.png"
+          />
           <span className="astrowind-wallet-float astrowind-wallet-float-one">구독 결제일</span>
           <span className="astrowind-wallet-float astrowind-wallet-float-two">내 정보는 내가 보관</span>
         </div>
@@ -95,8 +100,16 @@ export default function MintWalletPage() {
                 <h3>{feature.title.split("\n").map((line) => <span key={line}>{line}<br /></span>)}</h3>
                 <p>{feature.description}</p>
               </div>
-              <div className="astrowind-wallet-feature-images">
-                {feature.images.map((image, imageIndex) => <div className="astrowind-wallet-feature-image" key={image}><Image src={image} alt={`${feature.label} 화면 ${imageIndex + 1}`} width={1206} height={2622} sizes="(max-width: 800px) 35vw, 18vw" /></div>)}
+              <div className={`astrowind-wallet-feature-images${feature.images.length === 3 ? " is-trio" : ""}`}>
+                {feature.images.map((image, imageIndex) => (
+                  <IPhoneFrame
+                    alt={`${feature.label} 화면 ${imageIndex + 1}`}
+                    className="astrowind-wallet-feature-image"
+                    key={image}
+                    sizes="(max-width: 800px) 35vw, 205px"
+                    src={image}
+                  />
+                ))}
               </div>
             </article>
           ))}
