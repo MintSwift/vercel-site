@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import AppStoreButton from "../components/AppStoreButton";
 import ContactButton from "../components/ContactButton";
+import IPhoneFrame from "../components/IPhoneFrame";
 import ProjectBanner from "../components/ProjectBanner";
 
 export const metadata: Metadata = {
@@ -10,105 +10,226 @@ export const metadata: Metadata = {
   description: "2026 시즌의 레이스 일정, 결과, 드라이버와 팀 순위를 한곳에서 확인하는 레이스 트래커.",
 };
 
-const appShots = [
-  { src: "/overtake/01.png", number: "01", label: "Race weekend", title: "한 주말의 흐름을 한눈에" },
-  { src: "/overtake/02.png", number: "02", label: "Session results", title: "세션별 결과까지 빠르게" },
-  { src: "/overtake/03.png", number: "03", label: "Driver standings", title: "드라이버 챔피언십 순위" },
-  { src: "/overtake/04.png", number: "04", label: "Team standings", title: "팀 경쟁의 방향을 읽기" },
-  { src: "/overtake/05.png", number: "05", label: "Widgets", title: "다음 세션을 놓치지 않도록" },
-  { src: "/overtake/06.png", number: "06", label: "Settings", title: "알림과 표시 방식을 내게 맞게" },
+const raceStories = [
+  {
+    number: "01",
+    code: "SESSION CONTROL",
+    eyebrow: "Race weekend",
+    title: "세션의 시작부터 체커드 플래그까지.",
+    description:
+      "연습주행, 예선, 스프린트, 결승을 하나의 흐름으로 정리합니다. 내 시간대에 맞춘 일정과 세션 결과를 레이스 주말의 리듬 그대로 확인하세요.",
+    tags: ["Local time", "Session results", "Highlights"],
+    primary: "/overtake/01.png",
+    primaryAlt: "Overtake의 레이스 주말 일정 화면",
+    secondary: "/overtake/02.png",
+    secondaryAlt: "Overtake의 세션 결과 화면",
+  },
+  {
+    number: "02",
+    code: "CHAMPIONSHIP PULSE",
+    eyebrow: "Standings",
+    title: "챔피언십의 흐름을 더 빠르게.",
+    description:
+      "드라이버와 컨스트럭터 포인트를 한눈에 비교하고, 선두와의 격차부터 팀 내부 경쟁까지 시즌의 방향을 선명하게 읽어보세요.",
+    tags: ["Driver points", "Team points", "Gap to P1"],
+    primary: "/overtake/03.png",
+    primaryAlt: "Overtake의 드라이버 순위 화면",
+    secondary: "/overtake/04.png",
+    secondaryAlt: "Overtake의 팀 순위 화면",
+  },
+  {
+    number: "03",
+    code: "ALWAYS ON",
+    eyebrow: "Widgets & alerts",
+    title: "레이스가 시작되기 전에 먼저.",
+    description:
+      "홈 화면 위젯으로 다음 세션을 확인하고 필요한 알림만 선택하세요. 앱을 열지 않아도 중요한 순간을 놓치지 않도록 준비합니다.",
+    tags: ["Live widgets", "Push alerts", "Personal setup"],
+    primary: "/overtake/06.png",
+    primaryAlt: "Overtake의 홈 화면 레이스 위젯",
+    secondary: "/overtake/05.png",
+    secondaryAlt: "Overtake의 알림과 표시 설정 화면",
+  },
 ];
 
 export default function OvertakePage() {
   return (
-    <main className="case-page case-overtake">
+    <main className="case-page case-overtake f1-overtake-page">
       <header className="site-header page-shell">
         <Link className="brand" href="/">
-          <span className="brand-mark" aria-hidden="true">✦</span>CoolMint
+          <span className="brand-mark" aria-hidden="true">C</span>CoolMint
         </Link>
-        <Link className="back-link" href="/">Back to portfolio <span aria-hidden="true">↗</span></Link>
+        <div className="f1-header-actions">
+          <span className="f1-header-status"><i aria-hidden="true" /> 2026 season</span>
+          <Link className="back-link" href="/">Portfolio <span aria-hidden="true">↗</span></Link>
+        </div>
       </header>
+
+      <section className="f1-hero">
+        <div className="f1-hero-grid page-shell">
+          <div className="f1-hero-copy">
+            <p className="f1-kicker"><span>01</span> Unofficial race companion</p>
+            <h1><span>RACE.</span><strong>AHEAD.</strong></h1>
+            <p className="f1-hero-lead">
+              레이스 주말의 모든 세션과 챔피언십의 흐름을
+              <br />가장 빠르고 선명하게 따라가세요.
+            </p>
+            <div className="f1-hero-cta">
+              <AppStoreButton href="https://apps.apple.com/us/app/overtake-race-results/id6760613857" />
+              <span>Designed for<br />iPhone &amp; iPad</span>
+            </div>
+            <dl className="f1-hero-specs">
+              <div><dt>Season</dt><dd>2026</dd></div>
+              <div><dt>Sessions</dt><dd>All weekend</dd></div>
+              <div><dt>Updates</dt><dd>Live-ready</dd></div>
+            </dl>
+          </div>
+
+          <div className="f1-hero-visual" aria-label="Overtake 앱 미리보기">
+            <div className="f1-track-ring f1-track-ring-one" aria-hidden="true" />
+            <div className="f1-track-ring f1-track-ring-two" aria-hidden="true" />
+            <div className="f1-start-lights" aria-hidden="true">
+              <span /><span /><span /><span /><span />
+            </div>
+            <IPhoneFrame
+              alt="Overtake 레이스 주말 일정 화면"
+              className="f1-hero-phone f1-hero-phone-main"
+              mode="light"
+              priority
+              sizes="(max-width: 800px) 58vw, 330px"
+              src="/overtake/01.png"
+            />
+            <IPhoneFrame
+              alt="Overtake 드라이버 챔피언십 순위 화면"
+              className="f1-hero-phone f1-hero-phone-back"
+              mode="light"
+              priority
+              sizes="(max-width: 800px) 42vw, 245px"
+              src="/overtake/03.png"
+            />
+            <div className="f1-telemetry-card f1-telemetry-card-top">
+              <span>Next session</span><strong>FP1</strong><small>01D 02H 50M</small>
+            </div>
+            <div className="f1-telemetry-card f1-telemetry-card-bottom">
+              <span>Race mode</span><strong>ON</strong>
+            </div>
+          </div>
+        </div>
+        <div className="f1-hero-footer page-shell">
+          <span>Overtake / Race results</span>
+          <div><i aria-hidden="true" /> Track status <strong>Ready</strong></div>
+          <span>Scroll to explore ↓</span>
+        </div>
+      </section>
+
+      <div className="f1-ticker" aria-hidden="true">
+        <div>
+          <span>RACE WEEKEND</span><b>◆</b>
+          <span>SESSION RESULTS</span><b>◆</b>
+          <span>DRIVER STANDINGS</span><b>◆</b>
+          <span>LIVE WIDGETS</span><b>◆</b>
+          <span>RACE WEEKEND</span><b>◆</b>
+          <span>SESSION RESULTS</span>
+        </div>
+      </div>
+
+      <section className="f1-overview page-shell">
+        <div className="f1-section-label">
+          <span>02</span>
+          <p>Built for<br />race weekends</p>
+        </div>
+        <div className="f1-overview-title">
+          <p className="f1-kicker">Your race control</p>
+          <h2>EVERY SESSION.<br /><strong>EVERY SHIFT.</strong></h2>
+        </div>
+        <p className="f1-overview-copy">
+          복잡한 레이스 정보를 짧고 정확하게. Overtake는 필요한 순간에 일정, 결과, 순위와 알림을 하나의 경험으로 연결합니다.
+        </p>
+      </section>
+
+      <section className="f1-story page-shell">
+        {raceStories.map((story) => (
+          <article className="f1-story-row" key={story.number}>
+            <div className="f1-story-copy">
+              <div className="f1-story-code">
+                <span>{story.number}</span>
+                <small>{story.code}</small>
+              </div>
+              <p className="f1-kicker">{story.eyebrow}</p>
+              <h3>{story.title}</h3>
+              <p className="f1-story-description">{story.description}</p>
+              <ul className="f1-story-tags">
+                {story.tags.map((tag) => <li key={tag}>{tag}</li>)}
+              </ul>
+            </div>
+            <div className="f1-story-media">
+              <div className="f1-story-grid" aria-hidden="true" />
+              <span className="f1-apex-label" aria-hidden="true">APEX</span>
+              <IPhoneFrame
+                alt={story.primaryAlt}
+                className="f1-story-phone f1-story-phone-primary"
+                mode="light"
+                sizes="(max-width: 800px) 52vw, 300px"
+                src={story.primary}
+              />
+              <IPhoneFrame
+                alt={story.secondaryAlt}
+                className="f1-story-phone f1-story-phone-secondary"
+                mode="light"
+                sizes="(max-width: 800px) 39vw, 230px"
+                src={story.secondary}
+              />
+            </div>
+          </article>
+        ))}
+      </section>
+
+      <section className="f1-feature-section">
+        <div className="f1-feature-heading page-shell">
+          <div>
+            <p className="f1-kicker"><span>03</span> Race intelligence</p>
+            <h2>LESS NOISE.<br /><strong>MORE RACE.</strong></h2>
+          </div>
+          <p>경기의 긴장감은 그대로, 정보는 더 빠르게 읽히도록 설계했습니다.</p>
+        </div>
+        <div className="f1-feature-grid page-shell">
+          <article><span>01</span><i aria-hidden="true">⌁</i><h3>주말 일정</h3><p>세션별 현지 시간과 내 시간대를 함께 확인합니다.</p></article>
+          <article><span>02</span><i aria-hidden="true">↗</i><h3>결과와 포인트</h3><p>세션 결과와 선두까지의 격차를 빠르게 읽습니다.</p></article>
+          <article><span>03</span><i aria-hidden="true">◎</i><h3>순위 경쟁</h3><p>드라이버와 팀 챔피언십의 변화를 추적합니다.</p></article>
+          <article><span>04</span><i aria-hidden="true">◉</i><h3>위젯과 알림</h3><p>홈 화면과 알림으로 다음 순간을 준비합니다.</p></article>
+        </div>
+      </section>
+
       <ProjectBanner projectName="Overtake" />
 
-      <section className="overtake-intro page-shell">
-        <div className="overtake-intro-copy">
-          <p className="eyebrow"><span className="eyebrow-dot" /> Race results · 2026 season</p>
-          <h1>Stay ahead<br /><em>of the race.</em></h1>
-          <p className="overtake-lead">속도, 전략, 그리고 한순간의 선택이 흐름을 바꾸는 레이스 시즌을 더 선명하게 따라가세요.</p>
-          <AppStoreButton href="https://apps.apple.com/us/app/overtake-race-results/id6760613857" />
+      <section className="f1-note page-shell">
+        <div className="f1-section-label">
+          <span>04</span>
+          <p>Independent<br />by design</p>
         </div>
-        <div className="overtake-intro-aside">
-          <p>Overtake는 단순한 일정표가 아니라, 시즌 전체의 흐름을 따라가기 위한 레이스 동반자입니다.</p>
-          <div className="overtake-metadata">
-            <span>Season</span><strong>2026</strong>
-            <span>Platform</span><strong>iPhone · iPad</strong>
-            <span>Category</span><strong>Sports</strong>
+        <div>
+          <p className="f1-kicker">Unofficial race companion</p>
+          <h2>팬을 위한<br /><strong>독립 레이스 트래커.</strong></h2>
+        </div>
+        <p>
+          Overtake는 특정 리그, 대회 운영사, 팀 또는 관련 단체와 공식적으로 연관되지 않은 비공식 서비스입니다.
+          일정, 결과, 순위는 팬을 위한 참고 정보이며 공식 기록이나 발표를 대체하지 않습니다.
+        </p>
+      </section>
+
+      <section className="case-contact page-shell">
+        <div className="case-contact-card f1-contact-card">
+          <div>
+            <p className="f1-kicker">Radio check</p>
+            <h2>피드백을<br />들려주세요.</h2>
+          </div>
+          <div>
+            <p>서비스 제안이나 오류 제보를 보내주시면 다음 업데이트에 반영하겠습니다.</p>
+            <ContactButton />
           </div>
         </div>
       </section>
 
-      <section className="overtake-story page-shell">
-        <div className="overtake-section-heading">
-          <p className="section-kicker">Built for race weekends</p>
-          <h2>Every session.<br /><em>Every shift.</em></h2>
-          <p>연습주행부터 예선, 스프린트, 결승까지. 필요한 정보를 빠르게 정리해 경기의 리듬을 놓치지 않게 합니다.</p>
-        </div>
-        <div className="overtake-screenshot-grid">
-          {appShots.map((shot) => (
-            <article className="overtake-shot-card" key={shot.src}>
-              <div className="overtake-shot">
-                <Image src={shot.src} alt={shot.title} width={1206} height={2622} sizes="(max-width: 800px) 86vw, 28vw" />
-              </div>
-              <div className="overtake-shot-caption">
-                <span>{shot.number} / {shot.label}</span>
-                <h3>{shot.title}</h3>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="overtake-features page-shell">
-        <div className="overtake-feature-intro">
-          <p className="section-kicker">The race, organised</p>
-          <h2>정보는 짧게.<br /><em>맥락은 선명하게.</em></h2>
-        </div>
-        <div className="overtake-feature-list">
-          <article>
-            <span>01</span>
-            <div><h3>주말 일정과 세션</h3><p>시즌 전체 레이스 주말을 확인하고, 연습주행·예선·스프린트·결승의 시간을 한 번에 살펴보세요.</p></div>
-          </article>
-          <article>
-            <span>02</span>
-            <div><h3>결과와 포인트</h3><p>각 세션의 결과와 포인트 변화를 필요한 만큼 빠르게 확인할 수 있습니다.</p></div>
-          </article>
-          <article>
-            <span>03</span>
-            <div><h3>드라이버와 팀 순위</h3><p>챔피언십 경쟁이 어디로 향하는지 드라이버와 컨스트럭터 순위로 한눈에 읽어보세요.</p></div>
-          </article>
-          <article>
-            <span>04</span>
-            <div><h3>위젯과 알림</h3><p>홈 화면 위젯, 세션 시작 알림, 결과 알림으로 다음 장면을 놓치지 않게 도와줍니다.</p></div>
-          </article>
-        </div>
-      </section>
-
-      <section className="overtake-note page-shell">
-        <div>
-          <p className="section-kicker">Unofficial race companion</p>
-          <h2>팬을 위한<br /><em>독립 레이스 트래커.</em></h2>
-        </div>
-        <p>Overtake는 특정 리그, 대회 운영사, 팀 또는 관련 단체와 공식적으로 연관되지 않은 비공식 서비스입니다. 제공되는 일정, 결과, 순위 및 관련 정보는 팬을 위한 참고용으로 재구성되며 공식 기록 또는 공식 발표를 대체하지 않습니다.</p>
-      </section>
-
-      <section className="case-contact page-shell">
-        <div className="case-contact-card">
-          <p className="section-kicker">Have feedback?</p>
-          <h2>문의하기</h2>
-          <p>서비스 제안, 오류 제보를 남겨주세요.</p>
-          <ContactButton />
-        </div>
-      </section>
       <footer className="case-footer page-shell">
         <div className="case-policy-links"><Link href="/overtake/privacy.html">Privacy Policy</Link><Link href="/overtake/terms.html">Terms of Service</Link></div>
         <Link href="/mintwallet">Next project <span aria-hidden="true">→</span></Link>
