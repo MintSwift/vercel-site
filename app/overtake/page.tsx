@@ -10,7 +10,24 @@ export const metadata: Metadata = {
   description: "2026 시즌의 레이스 일정, 결과, 드라이버와 팀 순위를 한곳에서 확인하는 레이스 트래커.",
 };
 
-const raceStories = [
+type ScreenshotMode = "light" | "dark";
+
+type RaceStory = {
+  number: string;
+  code: string;
+  eyebrow: string;
+  title: string;
+  description: string;
+  tags: string[];
+  primary: string;
+  primaryAlt: string;
+  primaryMode: ScreenshotMode;
+  secondary: string;
+  secondaryAlt: string;
+  secondaryMode: ScreenshotMode;
+};
+
+const raceStories: RaceStory[] = [
   {
     number: "01",
     code: "SESSION CONTROL",
@@ -21,8 +38,10 @@ const raceStories = [
     tags: ["Local time", "Session results", "Highlights"],
     primary: "/overtake/01.png",
     primaryAlt: "Overtake의 레이스 주말 일정 화면",
+    primaryMode: "dark",
     secondary: "/overtake/02.png",
     secondaryAlt: "Overtake의 세션 결과 화면",
+    secondaryMode: "dark",
   },
   {
     number: "02",
@@ -34,8 +53,10 @@ const raceStories = [
     tags: ["Driver points", "Team points", "Gap to P1"],
     primary: "/overtake/03.png",
     primaryAlt: "Overtake의 드라이버 순위 화면",
+    primaryMode: "dark",
     secondary: "/overtake/04.png",
     secondaryAlt: "Overtake의 팀 순위 화면",
+    secondaryMode: "dark",
   },
   {
     number: "03",
@@ -43,12 +64,14 @@ const raceStories = [
     eyebrow: "Widgets & alerts",
     title: "레이스가 시작되기 전에 먼저.",
     description:
-      "홈 화면 위젯으로 다음 세션을 확인하고 필요한 알림만 선택하세요. 앱을 열지 않아도 중요한 순간을 놓치지 않도록 준비합니다.",
+      "홈 화면 위젯으로 다음 세션을 확인하고 설정에서 필요한 알림만 선택하세요. 앱을 열지 않아도 중요한 순간을 놓치지 않도록 준비합니다.",
     tags: ["Live widgets", "Push alerts", "Personal setup"],
     primary: "/overtake/06.png",
     primaryAlt: "Overtake의 홈 화면 레이스 위젯",
+    primaryMode: "light",
     secondary: "/overtake/05.png",
     secondaryAlt: "Overtake의 알림과 표시 설정 화면",
+    secondaryMode: "dark",
   },
 ];
 
@@ -94,7 +117,7 @@ export default function OvertakePage() {
             <IPhoneFrame
               alt="Overtake 레이스 주말 일정 화면"
               className="f1-hero-phone f1-hero-phone-main"
-              mode="light"
+              mode="dark"
               priority
               sizes="(max-width: 800px) 58vw, 330px"
               src="/overtake/01.png"
@@ -102,7 +125,7 @@ export default function OvertakePage() {
             <IPhoneFrame
               alt="Overtake 드라이버 챔피언십 순위 화면"
               className="f1-hero-phone f1-hero-phone-back"
-              mode="light"
+              mode="dark"
               priority
               sizes="(max-width: 800px) 42vw, 245px"
               src="/overtake/03.png"
@@ -168,14 +191,14 @@ export default function OvertakePage() {
               <IPhoneFrame
                 alt={story.primaryAlt}
                 className="f1-story-phone f1-story-phone-primary"
-                mode="light"
+                mode={story.primaryMode}
                 sizes="(max-width: 800px) 52vw, 300px"
                 src={story.primary}
               />
               <IPhoneFrame
                 alt={story.secondaryAlt}
                 className="f1-story-phone f1-story-phone-secondary"
-                mode="light"
+                mode={story.secondaryMode}
                 sizes="(max-width: 800px) 39vw, 230px"
                 src={story.secondary}
               />
