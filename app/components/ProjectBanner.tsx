@@ -7,8 +7,8 @@ const banners = [
   {
     name: "Overtake",
     href: "/overtake",
-    light: "/vercel-header-overtake-white-layout-v2.png",
-    dark: "/vercel-header-overtake-black-layout-v2.png",
+    light: "/vercel-header-overtake-black-layout-v3.png",
+    dark: "/vercel-header-overtake-black-layout-v3.png",
     label: "Overtake 프로젝트 배너 보기",
   },
   {
