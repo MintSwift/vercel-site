@@ -21,14 +21,15 @@ const banners = [
 ];
 
 type BannerName = "Overtake" | "MintWallet";
-type ProjectBannerProps = { projectName?: BannerName };
+type ProjectBannerSlide = (typeof banners)[number];
+type ProjectBannerProps = { projectName?: BannerName; slides?: ProjectBannerSlide[] };
 
 const AUTOPLAY_DELAY = 5500;
 
-export default function ProjectBanner({ projectName }: ProjectBannerProps) {
+export default function ProjectBanner({ projectName, slides }: ProjectBannerProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const displayedBanners = projectName === "Overtake" ? [banners[0]] : projectName === "MintWallet" ? [banners[1]] : banners;
+  const displayedBanners = slides ?? (projectName === "Overtake" ? [banners[0]] : projectName === "MintWallet" ? [banners[1]] : banners);
   const bannerCount = displayedBanners.length;
   const hasCarousel = bannerCount > 1;
 

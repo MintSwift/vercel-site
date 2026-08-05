@@ -75,6 +75,30 @@ const raceStories: RaceStory[] = [
   },
 ];
 
+const overtakeBanners = [
+  {
+    name: "Overtake / Campaign 01",
+    href: "/overtake",
+    light: "/overtake/Banner/exec-4eda375b-2fb1-42be-a09d-5397c026f972.png",
+    dark: "/overtake/Banner/exec-328f3296-c447-422c-aef5-f42b49347a86.png",
+    label: "Overtake 캠페인 배너 1 보기",
+  },
+  {
+    name: "Overtake / Campaign 02",
+    href: "/overtake",
+    light: "/overtake/Banner/exec-e25223dd-2da3-4d7c-ad98-a08ae33f6672.png",
+    dark: "/overtake/Banner/exec-b0c0fb43-4e57-4218-bbfa-bdc350798727.png",
+    label: "Overtake 캠페인 배너 2 보기",
+  },
+  {
+    name: "Overtake / Campaign 03",
+    href: "/overtake",
+    light: "/overtake/Banner/exec-becffca6-4e64-41e7-a07f-e9e68f78c7c4.png",
+    dark: "/overtake/Banner/exec-cdc7223b-d7ad-4f10-9b12-08af1a4df2c0.png",
+    label: "Overtake 캠페인 배너 3 보기",
+  },
+];
+
 export default function OvertakePage() {
   return (
     <main className="case-page case-overtake f1-overtake-page">
@@ -223,7 +247,7 @@ export default function OvertakePage() {
         </div>
       </section>
 
-      <ProjectBanner projectName="Overtake" />
+      <ProjectBanner projectName="Overtake" slides={overtakeBanners} />
 
       <section className="f1-note page-shell">
         <div className="f1-section-label">

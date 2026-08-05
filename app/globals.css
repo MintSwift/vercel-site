@@ -459,7 +459,7 @@ h1, h2, h3, p { margin-top: 0; } em { color: #85837b; font-family: Georgia, 'Tim
 .f1-feature-grid h3 { font-size: 20px; letter-spacing: -.05em; margin-bottom: 12px; }
 .f1-feature-grid p { color: #929692; font-size: 12px; line-height: 1.7; margin: 0; max-width: 210px; }
 .f1-overtake-page .project-banner { margin-bottom: 0; padding-top: 130px; }
-.f1-overtake-page .banner-viewport { background: #000; border: 1px solid var(--race-line); }
+.f1-overtake-page .banner-viewport { aspect-ratio: 1672 / 941; background: #000; border: 1px solid var(--race-line); }
 .f1-overtake-page .banner-image-light { display: none; }
 .f1-overtake-page .banner-image-dark { display: block; }
 .f1-overtake-page .banner-footer { border-bottom: 1px solid var(--race-line); color: var(--race-muted); padding-bottom: 16px; padding-top: 16px; text-transform: uppercase; }
