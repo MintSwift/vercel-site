@@ -458,7 +458,7 @@ h1, h2, h3, p { margin-top: 0; } em { color: #85837b; font-family: Georgia, 'Tim
 .f1-feature-grid article > i { color: var(--race-red); display: block; font-size: 38px; font-style: normal; height: 48px; margin: 42px 0 32px; }
 .f1-feature-grid h3 { font-size: 20px; letter-spacing: -.05em; margin-bottom: 12px; }
 .f1-feature-grid p { color: #929692; font-size: 12px; line-height: 1.7; margin: 0; max-width: 210px; }
-.f1-overtake-page .project-banner { margin-bottom: 0; padding-top: 130px; }
+.f1-overtake-page .project-banner { margin-bottom: 0; padding-top: 32px; }
 .f1-overtake-page .banner-viewport { aspect-ratio: 1672 / 941; background: #000; border: 1px solid var(--race-line); }
 .f1-overtake-page .banner-image-light { display: none; }
 .f1-overtake-page .banner-image-dark { display: block; }
@@ -579,7 +579,7 @@ h1, h2, h3, p { margin-top: 0; } em { color: #85837b; font-family: Georgia, 'Tim
   .f1-feature-grid article { border-bottom: 0; min-height: 265px; }
   .f1-feature-grid article:nth-child(2) { border-right: 1px solid var(--race-line); }
   .f1-feature-grid article:nth-child(n+3) { border-bottom: 1px solid var(--race-line); }
-  .f1-overtake-page .project-banner { padding-left: 20px; padding-right: 20px; padding-top: 90px; }
+  .f1-overtake-page .project-banner { padding-left: 20px; padding-right: 20px; padding-top: 24px; }
   .f1-overtake-page .banner-footer { padding-left: 0; padding-right: 0; }
   .f1-note { display: block; padding-bottom: 105px; padding-top: 105px; }
   .f1-note .f1-section-label { margin-bottom: 58px; max-width: 110px; }

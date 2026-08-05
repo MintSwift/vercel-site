@@ -112,6 +112,8 @@ export default function OvertakePage() {
         </div>
       </header>
 
+      <ProjectBanner projectName="Overtake" slides={overtakeBanners} />
+
       <section className="f1-hero">
         <div className="f1-hero-grid page-shell">
           <div className="f1-hero-copy">
@@ -246,8 +248,6 @@ export default function OvertakePage() {
           <article><span>04</span><i aria-hidden="true">◉</i><h3>위젯과 알림</h3><p>홈 화면과 알림으로 다음 순간을 준비합니다.</p></article>
         </div>
       </section>
-
-      <ProjectBanner projectName="Overtake" slides={overtakeBanners} />
 
       <section className="f1-note page-shell">
         <div className="f1-section-label">
