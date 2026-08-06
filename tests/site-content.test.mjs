@@ -30,6 +30,7 @@ test("portfolio routes and metadata are present", async () => {
   assert.match(files[8], /민트주간/);
   assert.match(files[8], /vercel-header-weeklyswift-white-layout-v2\.png/);
   assert.match(files[8], /1661868347/);
+  assert.match(files[8], /App Store Connect/);
   assert.match(files[9], /lang="ko"/);
   assert.equal(JSON.parse(files[10]).framework, "nextjs");
 });

@@ -22,11 +22,11 @@ const featureStories = [
   },
   {
     number: "02",
-    label: "KEEP YOUR SIGNAL",
-    title: "중요한 글은\n내 서재에.",
-    description: "나중에 다시 보고 싶은 아티클을 북마크하고, 내 페이스에 맞춰 지식 아카이브를 만들어보세요.",
+    label: "APP PERFORMANCE",
+    title: "앱의 성과를\n한눈에.",
+    description: "다운로드와 업데이트, 구독과 개발자 수익까지. App Store Connect 데이터를 한 화면에서 빠르게 확인하세요.",
     image: "/weeklyswift/04.png",
-    alt: "민트주간 북마크 화면",
+    alt: "민트주간 App Store Connect 성과 화면",
     tone: "cream",
   },
   {
