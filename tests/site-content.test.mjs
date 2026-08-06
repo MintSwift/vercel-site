@@ -8,6 +8,12 @@ test("portfolio routes and metadata are present", async () => {
   const files = await Promise.all([
     "app/page.tsx", "app/components/ProjectBanner.tsx", "app/components/ContactButton.tsx", "app/overtake/page.tsx", "app/overtake/privacy.html/page.tsx", "app/overtake/terms.html/page.tsx", "app/overtake/policy-content.tsx", "app/mintwallet/page.tsx", "app/weeklyswift/page.tsx", "app/layout.tsx", "vercel.json",
   ].map((file) => readFile(new URL(file, root), "utf8")));
+  const appAds = await Promise.all([
+    "public/app-ads.txt", "public/overtake/app-ads.txt", "public/mintwallet/app-ads.txt", "public/weeklyswift/app-ads.txt",
+  ].map((file) => readFile(new URL(file, root), "utf8")));
+  for (const content of appAds) {
+    assert.equal(content.trim(), "google.com, pub-1655656579913535, DIRECT, f08c47fec0942fa0");
+  }
   assert.match(files[0], /href: "\/overtake"/);
   assert.match(files[0], /href: "\/mintwallet"/);
   assert.match(files[0], /app-intro-section/);
