@@ -14,6 +14,7 @@ const projects = [
     name: "Overtake",
     type: "Sports data · iOS app",
     description: "경기의 흐름을 더 빠르고 선명하게 읽는 스포츠 경험.",
+    image: "/overtake/01.png",
     className: "project-overtake",
   },
   {
@@ -22,6 +23,7 @@ const projects = [
     name: "MintWallet",
     type: "Personal finance · iOS app",
     description: "돈의 움직임을 가볍게 정리하고, 내일을 차분하게 준비하는 방법.",
+    image: "/mintwallet/01.png",
     className: "project-wallet",
   },
   {
@@ -30,6 +32,7 @@ const projects = [
     name: "민트주간",
     type: "Developer news · iOS & iPadOS app",
     description: "빠르게 변하는 Swift 생태계에서 지금 읽어야 할 이야기만.",
+    image: "/weeklyswift/01.png",
     className: "project-weeklyswift",
   },
 ];
@@ -84,28 +87,15 @@ export default function Home() {
         <span className="header-status"><span className="status-dot" /> Available for select projects</span>
       </header>
 
-      <ProjectBanner />
-
-      <section id="top" className="portfolio-hero page-shell">
-        <div>
-          <p className="eyebrow"><span className="eyebrow-dot" /> Product designer &amp; developer · Seoul</p>
-          <h1>Small ideas,<br /><em>carefully made.</em></h1>
-          <p className="hero-description">사람들이 매일 쓰고, 오래 좋아할 수 있는 제품을 만듭니다. 복잡한 것을 단순하게, 평범한 것을 조금 더 특별하게.</p>
-          <a className="button button-primary" href="#work">Explore the work <span aria-hidden="true">↓</span></a>
-        </div>
-        <div className="hero-stamp" aria-hidden="true">
-          <div className="stamp-ring stamp-ring-one" /><div className="stamp-ring stamp-ring-two" />
-          <span className="stamp-main">CM</span><span className="stamp-caption">built with intent<br />since 2021</span>
-        </div>
-      </section>
+      <div id="top"><ProjectBanner /></div>
 
       <section id="work" className="work-section page-shell">
-        <div className="section-heading-row"><div><p className="section-kicker">Selected work</p><h2>A few things<br /><em>in the world.</em></h2></div><span className="project-count">03 products</span></div>
+        <div className="section-heading-row"><div><p className="section-kicker">What I make</p><h2>앱을 만듭니다.<br /><em>세 가지 방식으로.</em></h2></div><span className="project-count">03 apps</span></div>
         <div className="project-grid">
           {projects.map((project) => (
             <a className={`project-card ${project.className}`} href={project.href} key={project.name}>
               <div className="project-visual">
-                {project.name === "Overtake" ? <><div className="track-line" /><div className="track-orb" /><span className="visual-label">Read the game<br />as it moves.</span></> : project.name === "MintWallet" ? <><div className="wallet-stack"><span>₩</span><span>₩</span><span>₩</span></div><span className="visual-label">A calmer way<br />to keep score.</span></> : <><div className="weeklyswift-home-art"><Image src="/weeklyswift/app-icon.png" alt="" fill sizes="180px" /></div><span className="visual-label">Keep up with<br />what&apos;s next.</span></>}
+                <Image className="project-card-image" src={project.image} alt="" fill sizes="(max-width: 800px) 86vw, 38vw" />
               </div>
               <div className="project-info"><span>{project.index}</span><div><h3>{project.name}</h3><p>{project.type}</p><p className="project-description">{project.description}</p></div><b aria-hidden="true">↗</b></div>
             </a>
