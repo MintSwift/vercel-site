@@ -10,9 +10,14 @@ test("portfolio routes and metadata are present", async () => {
   ].map((file) => readFile(new URL(file, root), "utf8")));
   assert.match(files[0], /href: "\/overtake"/);
   assert.match(files[0], /href: "\/mintwallet"/);
+  assert.match(files[0], /app-intro-section/);
+  assert.match(files[0], /href: "\/weeklyswift"/);
+  assert.match(files[0], /03 products/);
   assert.match(files[1], /vercel-header-overtake-black-layout-v3\.png/);
   assert.match(files[1], /vercel-header-mintwallet-white-layout-v2\.png/);
   assert.match(files[1], /vercel-header-mintwallet-black-layout-v2\.png/);
+  assert.match(files[1], /onTouchStart/);
+  assert.match(files[1], /vercel-header-weeklyswift-white-layout-v2\.png/);
   assert.match(files[2], /FORM_URL/);
   assert.match(files[3], /Overtake/);
   assert.match(files[3], /ProjectBanner/);

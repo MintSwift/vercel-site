@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState, type TouchEvent } from "react";
 import Image from "next/image";
 
 const banners = [
@@ -18,9 +18,16 @@ const banners = [
     dark: "/vercel-header-mintwallet-black-layout-v2.png",
     label: "MintWallet 프로젝트 배너 보기",
   },
+  {
+    name: "민트주간",
+    href: "/weeklyswift",
+    light: "/weeklyswift/vercel-header-weeklyswift-white-layout-v2.png",
+    dark: "/weeklyswift/vercel-header-weeklyswift-white-layout-v2.png",
+    label: "민트주간 프로젝트 배너 보기",
+  },
 ];
 
-type BannerName = "Overtake" | "MintWallet";
+type BannerName = "Overtake" | "MintWallet" | "민트주간";
 type ProjectBannerSlide = (typeof banners)[number];
 type ProjectBannerProps = { projectName?: BannerName; slides?: ProjectBannerSlide[] };
 
@@ -29,7 +36,9 @@ const AUTOPLAY_DELAY = 5500;
 export default function ProjectBanner({ projectName, slides }: ProjectBannerProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const displayedBanners = slides ?? (projectName === "Overtake" ? [banners[0]] : projectName === "MintWallet" ? [banners[1]] : banners);
+  const touchStartX = useRef<number | null>(null);
+  const didSwipe = useRef(false);
+  const displayedBanners = slides ?? (projectName === "Overtake" ? [banners[0]] : projectName === "MintWallet" ? [banners[1]] : projectName === "민트주간" ? [banners[2]] : banners);
   const bannerCount = displayedBanners.length;
   const hasCarousel = bannerCount > 1;
 
@@ -51,6 +60,33 @@ export default function ProjectBanner({ projectName, slides }: ProjectBannerProp
     setActiveIndex((current) => (current + direction + bannerCount) % bannerCount);
   };
 
+  const handleTouchStart = (event: TouchEvent<HTMLElement>) => {
+    if (!hasCarousel) return;
+    touchStartX.current = event.touches[0]?.clientX ?? null;
+    didSwipe.current = false;
+    setIsPaused(true);
+  };
+
+  const handleTouchEnd = (event: TouchEvent<HTMLElement>) => {
+    const startX = touchStartX.current;
+    const endX = event.changedTouches[0]?.clientX ?? startX;
+    touchStartX.current = null;
+    setIsPaused(false);
+
+    if (startX === null || endX === null) return;
+    const distance = endX - startX;
+    if (Math.abs(distance) < 48) return;
+
+    didSwipe.current = true;
+    move(distance < 0 ? 1 : -1);
+  };
+
+  const preventSwipeNavigation = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    if (!didSwipe.current) return;
+    event.preventDefault();
+    didSwipe.current = false;
+  };
+
   return (
     <section
       className="project-banner page-shell"
@@ -58,6 +94,8 @@ export default function ProjectBanner({ projectName, slides }: ProjectBannerProp
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onFocus={() => setIsPaused(true)}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
       onBlur={(event) => {
         if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
           setIsPaused(false);
@@ -70,6 +108,7 @@ export default function ProjectBanner({ projectName, slides }: ProjectBannerProp
             className={`banner-slide ${index === activeIndex ? "is-active" : ""}`}
             href={banner.href}
             key={banner.name}
+            onClick={preventSwipeNavigation}
             tabIndex={index === activeIndex ? 0 : -1}
             aria-label={banner.label}
             aria-hidden={index !== activeIndex}

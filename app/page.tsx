@@ -34,13 +34,52 @@ const projects = [
   },
 ];
 
+const appStories = [
+  {
+    href: "/overtake",
+    index: "01",
+    name: "Overtake",
+    type: "RACE CONTROL · iOS APP",
+    title: "레이스의 흐름을",
+    accent: "더 빠르게.",
+    description: "연습주행부터 결승까지, 레이스 주말의 일정과 결과·순위를 하나의 흐름으로 확인합니다.",
+    image: "/overtake/01.png",
+    alt: "Overtake 레이스 일정 화면",
+    className: "app-intro-overtake",
+  },
+  {
+    href: "/mintwallet",
+    index: "02",
+    name: "MintWallet",
+    type: "PERSONAL FINANCE · iOS APP",
+    title: "중요한 정보는",
+    accent: "한곳에, 안전하게.",
+    description: "카드·계좌·구독·개인정보를 복잡하지 않게 정리하고 필요한 순간에 바로 찾습니다.",
+    image: "/mintwallet/01.png",
+    alt: "MintWallet 홈 화면",
+    className: "app-intro-wallet",
+  },
+  {
+    href: "/weeklyswift",
+    index: "03",
+    name: "민트주간",
+    type: "DEVELOPER NEWS · iOS & iPad APP",
+    title: "개발의 다음을",
+    accent: "읽는 습관.",
+    description: "빠르게 변하는 iOS와 Swift 생태계에서 지금 읽어야 할 뉴스와 아티클을 만납니다.",
+    image: "/weeklyswift/01.png",
+    alt: "민트주간 최신 뉴스 화면",
+    className: "app-intro-weeklyswift",
+  },
+];
+
 export default function Home() {
   return (
     <main>
       <header className="site-header page-shell">
         <a className="brand" href="#top" aria-label="CoolMint home"><span className="brand-mark" aria-hidden="true">✦</span>CoolMint</a>
         <nav className="nav-links" aria-label="Main navigation">
-          <a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a>
+          <a href="#work">Work</a><a href="#apps">Apps</a><a href="#about">About</a><a href="#contact">Contact</a>
         </nav>
         <span className="header-status"><span className="status-dot" /> Available for select projects</span>
       </header>
@@ -61,7 +100,7 @@ export default function Home() {
       </section>
 
       <section id="work" className="work-section page-shell">
-        <div className="section-heading-row"><div><p className="section-kicker">Selected work</p><h2>A few things<br /><em>in the world.</em></h2></div><span className="project-count">02 projects</span></div>
+        <div className="section-heading-row"><div><p className="section-kicker">Selected work</p><h2>A few things<br /><em>in the world.</em></h2></div><span className="project-count">03 products</span></div>
         <div className="project-grid">
           {projects.map((project) => (
             <a className={`project-card ${project.className}`} href={project.href} key={project.name}>
@@ -71,6 +110,29 @@ export default function Home() {
               <div className="project-info"><span>{project.index}</span><div><h3>{project.name}</h3><p>{project.type}</p><p className="project-description">{project.description}</p></div><b aria-hidden="true">↗</b></div>
             </a>
           ))}
+        </div>
+      </section>
+
+      <section id="apps" className="app-intro-section">
+        <div className="page-shell">
+          <div className="app-intro-heading">
+            <div><p className="section-kicker">Made for everyday focus</p><h2>세 가지 앱,<br /><em>세 가지 리듬.</em></h2></div>
+            <p>경기를 따라가고, 중요한 정보를 정리하고, 개발의 다음을 읽습니다. 매일의 다른 순간에 맞는 도구를 만듭니다.</p>
+          </div>
+          <div className="app-intro-list">
+            {appStories.map((app) => (
+              <a className={`app-intro-card ${app.className}`} href={app.href} key={app.name}>
+                <div className="app-intro-copy">
+                  <div className="app-intro-meta"><span>{app.index}</span><span>{app.type}</span></div>
+                  <p className="app-intro-name">{app.name}</p>
+                  <h3>{app.title}<br /><em>{app.accent}</em></h3>
+                  <p className="app-intro-description">{app.description}</p>
+                  <span className="app-intro-link">View project <b aria-hidden="true">↗</b></span>
+                </div>
+                <div className="app-intro-media"><Image src={app.image} alt={app.alt} fill sizes="(max-width: 800px) 86vw, 49vw" /></div>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
