@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import ProjectBanner from "./components/ProjectBanner";
 
 export const metadata: Metadata = {
@@ -22,6 +23,14 @@ const projects = [
     type: "Personal finance · iOS app",
     description: "돈의 움직임을 가볍게 정리하고, 내일을 차분하게 준비하는 방법.",
     className: "project-wallet",
+  },
+  {
+    href: "/weeklyswift",
+    index: "03",
+    name: "민트주간",
+    type: "Developer news · iOS & iPadOS app",
+    description: "빠르게 변하는 Swift 생태계에서 지금 읽어야 할 이야기만.",
+    className: "project-weeklyswift",
   },
 ];
 
@@ -57,7 +66,7 @@ export default function Home() {
           {projects.map((project) => (
             <a className={`project-card ${project.className}`} href={project.href} key={project.name}>
               <div className="project-visual">
-                {project.name === "Overtake" ? <><div className="track-line" /><div className="track-orb" /><span className="visual-label">Read the game<br />as it moves.</span></> : <><div className="wallet-stack"><span>₩</span><span>₩</span><span>₩</span></div><span className="visual-label">A calmer way<br />to keep score.</span></>}
+                {project.name === "Overtake" ? <><div className="track-line" /><div className="track-orb" /><span className="visual-label">Read the game<br />as it moves.</span></> : project.name === "MintWallet" ? <><div className="wallet-stack"><span>₩</span><span>₩</span><span>₩</span></div><span className="visual-label">A calmer way<br />to keep score.</span></> : <><div className="weeklyswift-home-art"><Image src="/weeklyswift/app-icon.png" alt="" fill sizes="180px" /></div><span className="visual-label">Keep up with<br />what&apos;s next.</span></>}
               </div>
               <div className="project-info"><span>{project.index}</span><div><h3>{project.name}</h3><p>{project.type}</p><p className="project-description">{project.description}</p></div><b aria-hidden="true">↗</b></div>
             </a>

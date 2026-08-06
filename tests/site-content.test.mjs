@@ -6,7 +6,7 @@ const root = new URL("../", import.meta.url);
 
 test("portfolio routes and metadata are present", async () => {
   const files = await Promise.all([
-    "app/page.tsx", "app/components/ProjectBanner.tsx", "app/components/ContactButton.tsx", "app/overtake/page.tsx", "app/overtake/privacy.html/page.tsx", "app/overtake/terms.html/page.tsx", "app/overtake/policy-content.tsx", "app/mintwallet/page.tsx", "app/layout.tsx", "vercel.json",
+    "app/page.tsx", "app/components/ProjectBanner.tsx", "app/components/ContactButton.tsx", "app/overtake/page.tsx", "app/overtake/privacy.html/page.tsx", "app/overtake/terms.html/page.tsx", "app/overtake/policy-content.tsx", "app/mintwallet/page.tsx", "app/weeklyswift/page.tsx", "app/layout.tsx", "vercel.json",
   ].map((file) => readFile(new URL(file, root), "utf8")));
   assert.match(files[0], /href: "\/overtake"/);
   assert.match(files[0], /href: "\/mintwallet"/);
@@ -27,6 +27,9 @@ test("portfolio routes and metadata are present", async () => {
   assert.match(files[7], /ProjectBanner/);
   assert.match(files[7], /projectName="MintWallet"/);
   assert.match(files[7], /id1532835617/);
-  assert.match(files[8], /lang="ko"/);
-  assert.equal(JSON.parse(files[9]).framework, "nextjs");
+  assert.match(files[8], /민트주간/);
+  assert.match(files[8], /vercel-header-weeklyswift-white-layout-v2\.png/);
+  assert.match(files[8], /1661868347/);
+  assert.match(files[9], /lang="ko"/);
+  assert.equal(JSON.parse(files[10]).framework, "nextjs");
 });
