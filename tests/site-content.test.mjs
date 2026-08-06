@@ -21,10 +21,12 @@ test("portfolio routes and metadata are present", async () => {
   assert.match(files[0], /03 apps/);
   assert.match(files[0], /앱을 만듭니다/);
   assert.doesNotMatch(files[0], /Small ideas/);
-  assert.match(files[0], /project-card-image/);
-  assert.match(files[0], /\/overtake\/01\.png/);
-  assert.match(files[0], /\/mintwallet\/01\.png/);
-  assert.match(files[0], /\/weeklyswift\/01\.png/);
+  assert.match(files[0], /screenshotSets\.overtake/);
+  assert.match(files[0], /screenshotSets\.mintwallet/);
+  assert.match(files[0], /screenshotSets\.weeklyswi(?:ft)/);
+  assert.match(files[0], /ScreenshotRail/);
+  assert.match(files[0], /mintwallet: Array\.from\(\{ length: 11/);
+  assert.match(files[0], /\/weeklyswift\/pad_01\.png/);
   assert.match(files[1], /vercel-header-overtake-black-layout-v3\.png/);
   assert.match(files[1], /vercel-header-mintwallet-white-layout-v2\.png/);
   assert.match(files[1], /vercel-header-mintwallet-black-layout-v2\.png/);

@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import ProjectBanner from "./components/ProjectBanner";
+import ScreenshotRail from "./components/ScreenshotRail";
 
 export const metadata: Metadata = {
   title: "CoolMint — Portfolio",
   description: "CoolMint의 제품과 실험을 모아둔 포트폴리오입니다.",
+};
+
+const screenshotSets = {
+  overtake: Array.from({ length: 6 }, (_, index) => `/overtake/${String(index + 1).padStart(2, "0")}.png`),
+  mintwallet: Array.from({ length: 11 }, (_, index) => `/mintwallet/${String(index + 1).padStart(2, "0")}.png`),
+  weeklyswift: ["/weeklyswift/01.png", "/weeklyswift/02.png", "/weeklyswift/03.png", "/weeklyswift/04.png", "/weeklyswift/05.png", "/weeklyswift/06.png", "/weeklyswift/07.png", "/weeklyswift/08.png", "/weeklyswift/09.png", "/weeklyswift/pad_01.png", "/weeklyswift/pad_02.png", "/weeklyswift/pad_04.png", "/weeklyswift/pad_05.png", "/weeklyswift/pad_06.png"],
 };
 
 const projects = [
@@ -14,7 +20,7 @@ const projects = [
     name: "Overtake",
     type: "Sports data · iOS app",
     description: "경기의 흐름을 더 빠르고 선명하게 읽는 스포츠 경험.",
-    image: "/overtake/01.png",
+    screenshots: screenshotSets.overtake,
     className: "project-overtake",
   },
   {
@@ -23,7 +29,7 @@ const projects = [
     name: "MintWallet",
     type: "Personal finance · iOS app",
     description: "돈의 움직임을 가볍게 정리하고, 내일을 차분하게 준비하는 방법.",
-    image: "/mintwallet/01.png",
+    screenshots: screenshotSets.mintwallet,
     className: "project-wallet",
   },
   {
@@ -32,7 +38,7 @@ const projects = [
     name: "민트주간",
     type: "Developer news · iOS & iPadOS app",
     description: "빠르게 변하는 Swift 생태계에서 지금 읽어야 할 이야기만.",
-    image: "/weeklyswift/01.png",
+    screenshots: screenshotSets.weeklyswift,
     className: "project-weeklyswift",
   },
 ];
@@ -46,8 +52,7 @@ const appStories = [
     title: "레이스의 흐름을",
     accent: "더 빠르게.",
     description: "연습주행부터 결승까지, 레이스 주말의 일정과 결과·순위를 하나의 흐름으로 확인합니다.",
-    image: "/overtake/01.png",
-    alt: "Overtake 레이스 일정 화면",
+    screenshots: screenshotSets.overtake,
     className: "app-intro-overtake",
   },
   {
@@ -58,8 +63,7 @@ const appStories = [
     title: "중요한 정보는",
     accent: "한곳에, 안전하게.",
     description: "카드·계좌·구독·개인정보를 복잡하지 않게 정리하고 필요한 순간에 바로 찾습니다.",
-    image: "/mintwallet/01.png",
-    alt: "MintWallet 홈 화면",
+    screenshots: screenshotSets.mintwallet,
     className: "app-intro-wallet",
   },
   {
@@ -70,8 +74,7 @@ const appStories = [
     title: "개발의 다음을",
     accent: "읽는 습관.",
     description: "빠르게 변하는 iOS와 Swift 생태계에서 지금 읽어야 할 뉴스와 아티클을 만납니다.",
-    image: "/weeklyswift/01.png",
-    alt: "민트주간 최신 뉴스 화면",
+    screenshots: screenshotSets.weeklyswift,
     className: "app-intro-weeklyswift",
   },
 ];
@@ -95,7 +98,7 @@ export default function Home() {
           {projects.map((project) => (
             <a className={`project-card ${project.className}`} href={project.href} key={project.name}>
               <div className="project-visual">
-                <Image className="project-card-image" src={project.image} alt="" fill sizes="(max-width: 800px) 86vw, 38vw" />
+                <ScreenshotRail name={project.name} slides={project.screenshots} />
               </div>
               <div className="project-info"><span>{project.index}</span><div><h3>{project.name}</h3><p>{project.type}</p><p className="project-description">{project.description}</p></div><b aria-hidden="true">↗</b></div>
             </a>
@@ -119,7 +122,7 @@ export default function Home() {
                   <p className="app-intro-description">{app.description}</p>
                   <span className="app-intro-link">View project <b aria-hidden="true">↗</b></span>
                 </div>
-                <div className="app-intro-media"><Image src={app.image} alt={app.alt} fill sizes="(max-width: 800px) 86vw, 49vw" /></div>
+                <div className="app-intro-media"><ScreenshotRail name={app.name} slides={app.screenshots} /></div>
               </a>
             ))}
           </div>
