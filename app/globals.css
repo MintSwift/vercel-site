@@ -147,10 +147,11 @@ h1, h2, h3, p { margin-top: 0; } em { color: #85837b; font-family: Georgia, 'Tim
 .weeklyswift-hero-banner img { display: block; height: auto; width: 100%; }
 .weeklyswift-hero-badge { align-items: center; background: var(--ws-ink); bottom: 24px; color: var(--ws-paper); display: flex; font-size: 9px; gap: 18px; left: 24px; letter-spacing: .12em; padding: 13px 15px; position: absolute; }
 .weeklyswift-hero-badge b { color: var(--ws-mint); font-size: 15px; font-weight: 400; }
-.weeklyswift-intro { display: grid; gap: 9%; grid-template-columns: .7fr 1.4fr .7fr; padding-bottom: 151px; }
+.weeklyswift-intro { display: grid; gap: 5%; grid-template-columns: .6fr 1.8fr .6fr; padding-bottom: 151px; }
 .weeklyswift-section-marker { align-items: start; flex-direction: column; gap: 15px; justify-content: start; }
 .weeklyswift-section-marker span:first-child { color: var(--ws-mint-dark); font-size: 11px; letter-spacing: .02em; }
-.weeklyswift-intro-copy h2, .weeklyswift-section-heading h2 { font-size: clamp(46px, 5.6vw, 80px); font-weight: 500; letter-spacing: -.11em; line-height: .9; margin: -10px 0 30px; }
+.weeklyswift-intro-copy h2 { font-size: clamp(42px, 4.5vw, 60px); font-weight: 500; letter-spacing: -.11em; line-height: .9; margin: -10px 0 30px; white-space: nowrap; }
+.weeklyswift-section-heading h2 { font-size: clamp(44px, 5vw, 68px); font-weight: 500; letter-spacing: -.11em; line-height: .9; margin: -10px 0 30px; }
 .weeklyswift-intro-copy h2 strong { color: var(--ws-mint-dark); font-weight: 500; }
 .weeklyswift-intro-copy p { color: #536560; font-size: 15px; line-height: 1.75; margin: 0; max-width: 460px; }
 .weeklyswift-intro-stats { border-top: 1px solid var(--ws-line); display: grid; gap: 22px; grid-template-columns: 1fr; padding-top: 14px; }
@@ -159,7 +160,7 @@ h1, h2, h3, p { margin-top: 0; } em { color: #85837b; font-family: Georgia, 'Tim
 .weeklyswift-intro-stats strong span { color: var(--ws-mint-dark); font-size: 17px; margin-left: 2px; }
 .weeklyswift-intro-stats small { color: var(--ws-muted); font-size: 9px; }
 .weeklyswift-features { padding-bottom: 158px; }
-.weeklyswift-section-heading { display: grid; gap: 10%; grid-template-columns: .7fr 1.25fr .7fr; margin-bottom: 72px; }
+.weeklyswift-section-heading { display: grid; gap: 5%; grid-template-columns: .6fr 1.8fr .6fr; margin-bottom: 72px; }
 .weeklyswift-section-heading h2 { margin: -10px 0 0; }
 .weeklyswift-section-heading p { color: #536560; font-size: 13px; line-height: 1.7; margin: 28px 0 0; max-width: 250px; }
 .weeklyswift-feature-list { display: grid; gap: 26px; }
@@ -249,7 +250,7 @@ h1, h2, h3, p { margin-top: 0; } em { color: #85837b; font-family: Georgia, 'Tim
   .weeklyswift-intro { display: block; padding-bottom: 105px; }
   .weeklyswift-intro .weeklyswift-section-marker { margin-bottom: 54px; }
   .weeklyswift-section-marker { font-size: 8px; gap: 11px; }
-  .weeklyswift-intro-copy h2, .weeklyswift-section-heading h2 { font-size: 48px; margin-bottom: 27px; }
+  .weeklyswift-intro-copy h2, .weeklyswift-section-heading h2 { font-size: 42px; margin-bottom: 27px; white-space: normal; }
   .weeklyswift-intro-copy p { font-size: 13px; }
   .weeklyswift-intro-stats { gap: 10px; margin-top: 53px; }
   .weeklyswift-intro-stats strong { font-size: 27px; }
