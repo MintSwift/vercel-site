@@ -18,7 +18,7 @@ test("portfolio routes and metadata are present", async () => {
   assert.match(files[0], /href: "\/mintwallet"/);
   assert.match(files[0], /app-intro-section/);
   assert.match(files[0], /href: "\/weeklyswift"/);
-  assert.match(files[0], /03 apps/);
+  assert.match(files[0], /04 apps/);
   assert.match(files[0], /앱을 만듭니다/);
   assert.doesNotMatch(files[0], /Small ideas/);
   assert.match(files[0], /screenshotSets\.overtake/);

@@ -84,6 +84,7 @@ h1, h2, h3, p { margin-top: 0; } em { color: #85837b; font-family: Georgia, 'Tim
 
 /* Weekly Swift project card */
 .project-weeklyswift .project-visual { background: #08c5b8; }
+.project-mintshelf .project-visual { background: #e7eee8; }
 
 /* Home app stories */
 .app-intro-section { background: #e9eeea; padding: 145px 0 155px; }
@@ -111,6 +112,8 @@ h1, h2, h3, p { margin-top: 0; } em { color: #85837b; font-family: Georgia, 'Tim
 .app-intro-wallet .app-intro-media { background: #dfc8b1; }
 .app-intro-weeklyswift .app-intro-copy { background: #d6f2ed; }
 .app-intro-weeklyswift .app-intro-media { background: #08c5b8; }
+.app-intro-mintshelf .app-intro-copy { background: #e7eee8; }
+.app-intro-mintshelf .app-intro-media { background: #dce8dd; }
 
 /* Weekly Swift product page */
 .weeklyswift-page {

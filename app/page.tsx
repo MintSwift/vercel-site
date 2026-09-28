@@ -11,6 +11,7 @@ const screenshotSets = {
   overtake: Array.from({ length: 6 }, (_, index) => `/overtake/${String(index + 1).padStart(2, "0")}.png`),
   mintwallet: Array.from({ length: 11 }, (_, index) => `/mintwallet/${String(index + 1).padStart(2, "0")}.png`),
   weeklyswift: ["/weeklyswift/01.png", "/weeklyswift/02.png", "/weeklyswift/03.png", "/weeklyswift/04.png", "/weeklyswift/05.png", "/weeklyswift/06.png", "/weeklyswift/07.png", "/weeklyswift/08.png", "/weeklyswift/09.png", "/weeklyswift/pad_01.png", "/weeklyswift/pad_02.png", "/weeklyswift/pad_04.png", "/weeklyswift/pad_05.png", "/weeklyswift/pad_06.png"],
+  mintshelf: ["/mintshelf/assets/screenshots/01-bookshelf.png", "/mintshelf/assets/screenshots/02-book-detail.png", "/mintshelf/assets/screenshots/03-quotes.png", "/mintshelf/assets/screenshots/04-book-contents.png", "/mintshelf/assets/screenshots/05-reading-note.png", "/mintshelf/assets/screenshots/06-book-search.png", "/mintshelf/assets/screenshots/07-book-import.png", "/mintshelf/assets/screenshots/08-cover-grid.png"],
 };
 
 const projects = [
@@ -40,6 +41,15 @@ const projects = [
     description: "빠르게 변하는 Swift 생태계에서 지금 읽어야 할 이야기만.",
     screenshots: screenshotSets.weeklyswift,
     className: "project-weeklyswift",
+  },
+  {
+    href: "/mintshelf",
+    index: "04",
+    name: "한장씩",
+    type: "Reading · iOS app",
+    description: "읽은 책과 문장, 독서 기록을 한 곳에 모아 나만의 서재를 만듭니다.",
+    screenshots: screenshotSets.mintshelf,
+    className: "project-mintshelf",
   },
 ];
 
@@ -77,6 +87,17 @@ const appStories = [
     screenshots: screenshotSets.weeklyswift,
     className: "app-intro-weeklyswift",
   },
+  {
+    href: "/mintshelf",
+    index: "04",
+    name: "한장씩",
+    type: "PERSONAL LIBRARY · iOS APP",
+    title: "읽는 자리에서",
+    accent: "책을 기억해요.",
+    description: "책장과 읽기 진도, 마음에 남은 문장과 독서 기록을 모아요. iCloud를 허용하면 같은 Apple 계정의 기기에서 자동으로 이어집니다.",
+    screenshots: screenshotSets.mintshelf,
+    className: "app-intro-mintshelf",
+  },
 ];
 
 export default function Home() {
@@ -93,7 +114,7 @@ export default function Home() {
       <div id="top"><ProjectBanner /></div>
 
       <section id="work" className="work-section page-shell">
-        <div className="section-heading-row"><div><p className="section-kicker">What I make</p><h2>앱을 만듭니다.<br /><em>세 가지 방식으로.</em></h2></div><span className="project-count">03 apps</span></div>
+        <div className="section-heading-row"><div><p className="section-kicker">What I make</p><h2>앱을 만듭니다.<br /><em>네 가지 방식으로.</em></h2></div><span className="project-count">04 apps</span></div>
         <div className="project-grid">
           {projects.map((project) => (
             <a className={`project-card ${project.className}`} href={project.href} key={project.name}>
