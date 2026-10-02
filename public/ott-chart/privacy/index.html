@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f5ef" />
+    <meta name="description" content="공개예정 앱의 개인정보 처리방침입니다. 기기 내 저장, 로컬 공개 알림, 선택적 분석 및 제3자 서비스 이용 방식을 안내합니다." />
+    <title>개인정보 처리방침 — 공개예정</title>
+    <link rel="stylesheet" href="/mintshelf/style.css" />
+    <link rel="stylesheet" href="/ott-chart/style.css" />
+    <script>
+      (() => {
+        const allowed = ["ko", "en", "ja"];
+        const requested = new URLSearchParams(window.location.search).get("lang");
+        const browser = (navigator.language || "ko").slice(0, 2).toLowerCase();
+        const locale = allowed.includes(requested) ? requested : allowed.includes(browser) ? browser : "ko";
+        document.documentElement.lang = locale;
+        document.documentElement.dataset.locale = locale;
+        document.title = ({ ko: "개인정보 처리방침 — 공개예정", en: "Privacy Policy — Coming Soon", ja: "プライバシーポリシー — 公開予定" })[locale];
+        document.addEventListener("DOMContentLoaded", () => {
+          document.querySelectorAll("[data-locale-href]").forEach((link) => {
+            link.href = `${link.dataset.localeHref}?lang=${locale}`;
+          });
+          document.querySelectorAll("[data-language-nav]").forEach((nav) => {
+            nav.setAttribute("aria-label", ({ ko: "언어", en: "Language", ja: "言語" })[locale]);
+          });
+          document.querySelectorAll("[data-localized-nav]").forEach((nav) => {
+            nav.setAttribute("aria-label", ({ ko: "페이지 메뉴", en: "Page navigation", ja: "ページメニュー" })[locale]);
+          });
+        });
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/"><span>CoolMint</span></a>
+      <nav data-localized-nav aria-label="페이지 메뉴"><a href="/"><span data-locale="ko">포트폴리오</span><span data-locale="en">Portfolio</span><span data-locale="ja">ポートフォリオ</span></a><a class="nav-support" data-locale-href="/ott-chart/support" href="/ott-chart/support?lang=ko"><span data-locale="ko">고객지원</span><span data-locale="en">Support</span><span data-locale="ja">サポート</span></a></nav>
+    </header>
+    <main class="legal-main">
+      <a class="back-link" href="/">← CoolMint</a>
+      <nav class="legal-language-nav" data-language-nav aria-label="언어">
+        <a href="?lang=ko" lang="ko">한국어</a><a href="?lang=en" lang="en">English</a><a href="?lang=ja" lang="ja">日本語</a>
+      </nav>
+
+      <article data-locale="ko">
+        <p class="eyebrow eyebrow-muted">PRIVACY</p>
+        <h1>개인정보 처리방침</h1>
+        <p class="legal-meta">공개예정 · 시행일 2026년 10월 2일</p>
+        <div class="legal-content">
+          <p>CoolMint(이하 “운영자”)는 공개예정 앱에서 필요한 범위의 정보만 처리합니다. 앱은 회원 가입을 요구하지 않습니다. 관심작과 설정은 기기에 저장하고 위젯과 공유하며, 운영자의 서버에 관심작 목록을 업로드하지 않습니다.</p>
+          <section><h2>1. 기기에 저장하는 정보</h2><p>저장한 작품, 공개 알림 상태, 선택한 OTT·게임 플랫폼, 앱 언어와 위젯 표시 정보는 기기 내 저장 공간 및 앱 그룹에 보관합니다. 사용자는 앱에서 관심작을 지우거나 알림을 끌 수 있습니다. 앱을 삭제하면 기기 내 앱 데이터도 삭제됩니다.</p></section>
+          <section><h2>2. 선택적 사용 통계</h2><p>사용 통계는 기본적으로 꺼져 있습니다. 설정에서 직접 켠 경우 Firebase Analytics로 기능 사용 이벤트를 보냅니다. 이벤트에는 작품 분류, 필터 이름, 검색 결과 수 등이 포함될 수 있지만 작품 제목, 검색어, 관심작 목록은 이벤트에 넣지 않습니다. Firebase SDK는 분석 제공에 필요한 앱·기기 기술 정보도 처리할 수 있습니다. 설정에서 언제든 수집을 끌 수 있습니다.</p></section>
+          <section><h2>3. 알림 정보</h2><p>공개일 알림은 사용자가 iOS 알림 권한을 허용하면 기기 안에 예약됩니다. 알림 예약을 위해 작품 정보나 알림 설정을 외부 알림 서버로 전송하지 않습니다.</p></section>
+          <section><h2>4. 카탈로그와 제3자 서비스</h2><p>앱은 Firebase Firestore에서 공개 카탈로그를 읽고 포스터를 jsDelivr 또는 Firebase Storage에서 불러옵니다. 두 경로를 모두 이용할 수 없으면 카탈로그에 기록된 원본 이미지 제공자를 시도합니다. 앱은 이 서비스에 관심작 목록을 쓰지 않습니다. 카탈로그나 이미지를 요청할 때 해당 서비스가 IP 주소와 요청 시각 같은 일반적인 네트워크 정보를 처리할 수 있습니다. 사용자가 OTT 시청 링크를 누르면 해당 사업자의 서비스로 이동하며 그 사업자의 개인정보 처리방침이 적용됩니다.</p><p>Firebase Analytics는 사용자가 설정에서 켠 경우에만 사용합니다. 공개 카탈로그용 Firestore 데이터베이스는 <code>us-central1</code>에, 포스터용 Firebase Storage 버킷은 <code>US-EAST1</code>에 있습니다. 위치를 별도로 선택할 수 없는 Firebase 서비스는 Google 글로벌 인프라에서 처리될 수 있습니다. Firebase는 Google이 제공하며, 서비스별 처리는 Google/Firebase 정책을 따릅니다.</p></section>
+          <section><h2>5. 보관, 삭제와 정보주체 권리</h2><p>관심작·필터·언어 설정은 사용자가 기기에서 삭제하거나 앱을 제거할 때까지 기기에 남습니다. 로컬 알림은 앱에서 해제하거나 iOS 설정에서 앱 알림을 끌 수 있습니다. Analytics는 사용자가 설정에서 끄면 이후 이벤트 전송을 중단합니다. 이미 Firebase에 전송된 정보의 보관·삭제는 해당 서비스의 설정과 정책에 따릅니다.</p><p>정보주체는 적용되는 법령에 따라 개인정보 열람, 정정·삭제, 처리정지를 요청할 수 있습니다. 관심작 삭제와 알림 해제, Analytics 수집 중지는 앱에서 직접 할 수 있으며, 그 밖의 요청은 아래 개인정보 보호 담당자에게 이메일로 보내 주세요. 본인 확인이 필요한 경우 확인 절차 후 적용 가능한 범위에서 처리합니다.</p></section>
+          <section><h2>6. 웹사이트 방문과 문의</h2><p>이 페이지와 고객지원 페이지는 Vercel에서 제공됩니다. 호스팅 제공자가 보안과 운영을 위해 IP 주소, 브라우저 정보, 요청 경로와 시각 같은 접속 로그를 처리할 수 있습니다.</p><p>개인정보 보호 담당자: 최정훈 · CoolMint<br />개인정보 관련 문의나 권리 요청은 <a href="mailto:hello@coolmint.studio">hello@coolmint.studio</a>로 보내 주세요. 운영자는 요청을 확인하고 적용 가능한 범위에서 답변합니다.</p></section>
+          <p>앱 기능이나 정보 처리 방식이 바뀌면 이 방침과 시행일을 함께 갱신합니다.</p>
+        </div>
+      </article>
+
+      <article data-locale="en">
+        <p class="eyebrow eyebrow-muted">PRIVACY</p>
+        <h1>Privacy Policy</h1>
+        <p class="legal-meta">Coming Soon · Effective October 2, 2026</p>
+        <div class="legal-content">
+          <p>CoolMint (“we”) limits the information processed by Coming Soon to what its features need. The app does not require an account. Watchlist items and preferences stay on the device and are shared with the widget; the app does not upload a user’s watchlist to our servers.</p>
+          <section><h2>1. Information stored on your device</h2><p>Saved titles, reminder status, selected streaming services and game platforms, app language, and widget display data are stored in the app’s local storage and App Group. You can remove titles or turn off reminders in the app. Deleting the app removes its local app data.</p></section>
+          <section><h2>2. Optional usage analytics</h2><p>Usage analytics is off by default. If you turn it on in Settings, the app sends feature-usage events to Firebase Analytics. Events may include a content category, filter name, or search-result count; they do not include title names, search text, or your watchlist. The Firebase SDK may also process app and device technical information needed to provide analytics. You can turn collection off at any time in Settings.</p></section>
+          <section><h2>3. Notifications</h2><p>Release reminders are scheduled on your device after you allow iOS notifications. The app does not send your saved titles or reminder settings to a notification server to schedule them.</p></section>
+          <section><h2>4. Catalog and third-party services</h2><p>The app reads the public catalog from Firebase Firestore and loads posters from jsDelivr or Firebase Storage. If both paths are unavailable, it tries the original image host listed for the poster. The app does not write your watchlist to these services. Those services may process ordinary network information, such as an IP address and request time, when serving catalog data or images. When you open a streaming-service link, that service’s privacy policy applies.</p><p>Firebase Analytics is used only when you turn it on in Settings. The Firestore database is configured in <code>us-central1</code>, and the Firebase Storage bucket is in <code>US-EAST1</code>. Firebase services without a selectable data location may process data on Google’s global infrastructure. Google provides Firebase, and service-specific processing follows Google/Firebase policies.</p></section>
+          <section><h2>5. Retention, deletion, and your rights</h2><p>Saved titles, filters, and language preferences remain on your device until you remove them or uninstall the app. You can cancel local reminders in the app or disable notifications in iOS Settings. Turning analytics off stops future event collection. Retention or deletion of data already sent to Firebase follows that service’s settings and policies.</p><p>Where applicable law provides these rights, you may request access to, correction or deletion of, or suspension of processing of personal information about you. You can remove watchlist entries and reminders or turn off analytics in the app. Send other requests to the privacy contact below; we may verify your identity and will respond as required by applicable law.</p></section>
+          <section><h2>6. Website visits and contact</h2><p>This policy and the support page are hosted by Vercel. The hosting provider may process access logs such as IP address, browser information, request path, and time for security and service operation.</p><p>Privacy contact: Junghoon Choi · CoolMint<br />For privacy questions or rights requests, contact <a href="mailto:hello@coolmint.studio">hello@coolmint.studio</a>. We will review and respond within the scope of applicable requirements.</p></section>
+          <p>We will update this policy and its effective date if app features or data practices change.</p>
+        </div>
+      </article>
+
+      <article data-locale="ja">
+        <p class="eyebrow eyebrow-muted">PRIVACY</p>
+        <h1>プライバシーポリシー</h1>
+        <p class="legal-meta">公開予定 · 施行日 2026年10月2日</p>
+        <div class="legal-content">
+          <p>CoolMint（以下「運営者」）は、公開予定アプリで必要な範囲の情報のみを取り扱います。アカウント登録は不要です。お気に入り作品や設定は端末に保存し、ウィジェットと共有します。お気に入り一覧を運営者のサーバーへアップロードすることはありません。</p>
+          <section><h2>1. 端末に保存する情報</h2><p>保存した作品、通知の状態、選択した配信サービス・ゲームプラットフォーム、アプリの言語、ウィジェット表示情報は、端末内およびアプリグループに保存されます。アプリ内で作品を削除したり通知を解除したりできます。アプリを削除すると端末内のアプリデータも削除されます。</p></section>
+          <section><h2>2. 任意の利用状況分析</h2><p>利用状況分析は初期状態でオフです。設定で有効にした場合、Firebase Analyticsへ機能利用イベントを送信します。イベントには作品の分類、フィルター名、検索結果数などが含まれることがありますが、作品名、検索語、お気に入り一覧は含めません。Firebase SDKは分析サービスの提供に必要なアプリ・端末の技術情報を処理する場合があります。設定からいつでもオフにできます。</p></section>
+          <section><h2>3. 通知</h2><p>公開日の通知は、iOSの通知を許可すると端末内に予約されます。通知を予約するために、お気に入り作品や通知設定を外部の通知サーバーへ送信しません。</p></section>
+          <section><h2>4. カタログと第三者サービス</h2><p>アプリはFirebase Firestoreから公開カタログを読み込み、ポスター画像をjsDelivrまたはFirebase Storageから取得します。両方の経路を利用できない場合は、カタログに記録された原画像の配信元を試します。お気に入り一覧をこれらのサービスに書き込むことはありません。カタログや画像の配信時、各サービスがIPアドレスやリクエスト時刻など通常のネットワーク情報を処理する場合があります。配信サービスのリンクを開くと、移動先サービスのプライバシーポリシーが適用されます。</p><p>Firebase Analyticsは設定で有効にした場合のみ使用します。Firestoreデータベースは<code>us-central1</code>、Firebase Storageバケットは<code>US-EAST1</code>にあります。データ所在地を選択できないFirebaseサービスはGoogleのグローバルインフラで処理される場合があります。FirebaseはGoogleが提供し、詳細な処理はGoogle/Firebaseの各ポリシーに従います。</p></section>
+          <section><h2>5. 保存期間・削除・ご本人の権利</h2><p>お気に入り、フィルター、言語設定は、端末で削除するかアプリをアンインストールするまで端末に保存されます。ローカル通知はアプリ内で解除するか、iOS設定でアプリ通知をオフにできます。分析をオフにすると、その後のイベント送信を停止します。Firebaseへ送信済みの情報の保存・削除は各サービスの設定とポリシーに従います。</p><p>適用される法令に基づき、ご自身に関する情報の開示、訂正・削除、処理停止を請求できます。お気に入りや通知の削除、分析の停止はアプリ内で行えます。それ以外の請求は、下記の個人情報保護担当者へメールでお送りください。必要に応じて本人確認を行い、適用される要件の範囲で対応します。</p></section>
+          <section><h2>6. ウェブサイトの利用とお問い合わせ</h2><p>このページとサポートページはVercelでホストされています。ホスティング事業者は、安全な運営のためIPアドレス、ブラウザー情報、リクエスト先と時刻などのアクセスログを処理する場合があります。</p><p>個人情報保護担当者: Junghoon Choi · CoolMint<br />個人情報に関するお問い合わせ・権利請求は <a href="mailto:hello@coolmint.studio">hello@coolmint.studio</a> へご連絡ください。適用される要件の範囲で確認・回答します。</p></section>
+          <p>アプリ機能または情報の取り扱いを変更した場合、このポリシーと施行日を更新します。</p>
+        </div>
+      </article>
+    </main>
+    <footer class="site-footer">
+      <a class="footer-brand" href="/">CoolMint</a>
+      <nav data-localized-nav aria-label="페이지 메뉴"><a data-locale-href="/ott-chart/support" href="/ott-chart/support?lang=ko"><span data-locale="ko">고객지원</span><span data-locale="en">Support</span><span data-locale="ja">サポート</span></a><a href="/"><span data-locale="ko">CoolMint 포트폴리오</span><span data-locale="en">CoolMint Portfolio</span><span data-locale="ja">CoolMint ポートフォリオ</span></a></nav>
+      <p class="copyright">CoolMint</p>
+    </footer>
+  </body>
+</html>

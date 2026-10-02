@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ko" data-locale="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f5ef" />
+    <meta name="description" content="OTT 시리즈, 영화, 애니메이션과 게임 출시 일정을 한곳에서 확인하고 관심작 알림과 홈 화면 위젯으로 챙겨보세요." />
+    <meta property="og:title" content="공개예정 — 작품 공개일과 게임 출시일" />
+    <meta property="og:description" content="기다리는 작품의 공개 일정을 한눈에 확인하고 관심작 알림을 받아보세요." />
+    <link rel="canonical" href="https://coolmint.vercel.app/ott-chart" />
+    <link rel="alternate" hreflang="ko" href="https://coolmint.vercel.app/ott-chart?lang=ko" />
+    <link rel="alternate" hreflang="en" href="https://coolmint.vercel.app/ott-chart?lang=en" />
+    <link rel="alternate" hreflang="ja" href="https://coolmint.vercel.app/ott-chart?lang=ja" />
+    <link rel="alternate" hreflang="x-default" href="https://coolmint.vercel.app/ott-chart" />
+    <title>공개예정 — 작품 공개일과 게임 출시일</title>
+    <link rel="stylesheet" href="/mintshelf/style.css" />
+    <link rel="stylesheet" href="/ott-chart/style.css" />
+    <script>
+      (() => {
+        const locales = {
+          ko: {
+            title: "공개예정 — 작품 공개일과 게임 출시일",
+            description: "OTT 시리즈, 영화, 애니메이션과 게임 출시 일정을 한곳에서 확인하고 관심작 알림과 홈 화면 위젯으로 챙겨보세요.",
+            nav: "페이지 메뉴",
+            languageNav: "언어",
+          },
+          en: {
+            title: "Coming Soon — Streaming, Film & Game Dates",
+            description: "Track upcoming streaming series, films, anime, and games, then save titles and set release reminders.",
+            nav: "Page navigation",
+            languageNav: "Language",
+          },
+          ja: {
+            title: "公開予定 — 配信・映画・ゲームの日程",
+            description: "シリーズ、映画、アニメ、ゲームの日程を確認。お気に入りを保存して公開通知を設定できます。",
+            nav: "ページメニュー",
+            languageNav: "言語",
+          },
+        };
+        const requested = new URLSearchParams(window.location.search).get("lang");
+        const browser = (navigator.language || "ko").slice(0, 2).toLowerCase();
+        const locale = Object.hasOwn(locales, requested) ? requested : Object.hasOwn(locales, browser) ? browser : "ko";
+        document.documentElement.lang = locale;
+        document.documentElement.dataset.locale = locale;
+        document.title = locales[locale].title;
+        document.querySelector('meta[name="description"]').content = locales[locale].description;
+        document.querySelector('meta[property="og:title"]').content = locales[locale].title;
+        document.querySelector('meta[property="og:description"]').content = locales[locale].description;
+        document.addEventListener("DOMContentLoaded", () => {
+          document.querySelectorAll("[data-locale-href]").forEach((link) => {
+            link.href = `${link.dataset.localeHref}?lang=${locale}`;
+          });
+          document.querySelector("[data-language-nav]").setAttribute("aria-label", locales[locale].languageNav);
+          document.querySelectorAll("[data-localized-nav]").forEach((nav) => {
+            nav.setAttribute("aria-label", locales[locale].nav);
+          });
+        });
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/ott-chart/"><span data-locale="ko">공개예정</span><span data-locale="en">Coming Soon</span><span data-locale="ja">公開予定</span></a>
+      <nav data-localized-nav aria-label="페이지 메뉴">
+        <a data-locale-href="/ott-chart/privacy" href="/ott-chart/privacy?lang=ko"><span data-locale="ko">개인정보</span><span data-locale="en">Privacy</span><span data-locale="ja">プライバシー</span></a>
+        <a data-locale-href="/ott-chart/support" href="/ott-chart/support?lang=ko"><span data-locale="ko">고객지원</span><span data-locale="en">Support</span><span data-locale="ja">サポート</span></a>
+      </nav>
+    </header>
+    <main class="ott-chart-main">
+      <nav class="ott-chart-languages" data-language-nav aria-label="언어">
+        <a href="?lang=ko" lang="ko">한국어</a><a href="?lang=en" lang="en">English</a><a href="?lang=ja" lang="ja">日本語</a>
+      </nav>
+
+      <article data-locale="ko">
+        <section class="ott-chart-hero">
+          <div class="ott-chart-copy">
+            <p class="ott-chart-eyebrow">OTT · 영화 · 애니메이션 · 게임</p>
+            <h1>기다리는 작품의 공개일을 한눈에.</h1>
+            <p class="ott-chart-lede">이번 주 공개작과 새로 확정된 일정을 확인하고, 관심작은 알림과 홈 화면 위젯으로 챙겨보세요.</p>
+            <span class="ott-chart-store ott-chart-store-pending">App Store 출시 준비 중</span>
+            <p class="ott-chart-languages-note">한국어 · English · 日本語</p>
+          </div>
+          <img class="ott-chart-preview" src="/ott-chart/media/hero-ko.jpg" alt="공개예정 앱의 검색, 작품 일정, 관심작 화면" width="736" height="1600" fetchpriority="high" />
+        </section>
+
+        <section class="ott-chart-features" aria-labelledby="features-title-ko">
+          <p class="ott-chart-eyebrow">놓치지 않도록 모아보기</p>
+          <h2 id="features-title-ko">찾고, 저장하고, 알림 받으세요.</h2>
+          <div class="ott-chart-feature-grid">
+            <div><span aria-hidden="true">⌕</span><h3>한 번에 검색</h3><p>작품명, OTT 서비스, 게임 플랫폼과 공개일로 시리즈·영화·애니메이션·게임을 찾습니다.</p></div>
+            <div><span aria-hidden="true">♧</span><h3>관심작과 알림</h3><p>관심작을 저장하고 확정된 공개일 오전 9시에 알림을 받으세요. 저장한 일정은 홈 화면 위젯에도 표시됩니다.</p></div>
+            <div><span aria-hidden="true">⌘</span><h3>게임 출시 정보</h3><p>플랫폼별 출시일과 확인된 가격, 한국어 지원 정보를 작품별 출처와 함께 확인합니다.</p></div>
+          </div>
+          <p class="ott-chart-note">공개 일정은 바뀔 수 있습니다. 최신 정보는 작품별 출처에서 확인해 주세요.</p>
+        </section>
+      </article>
+
+      <article data-locale="en">
+        <section class="ott-chart-hero">
+          <div class="ott-chart-copy">
+            <p class="ott-chart-eyebrow">STREAMING · FILM · ANIME · GAMES</p>
+            <h1>Know when your next favorite arrives.</h1>
+            <p class="ott-chart-lede">Browse this week’s releases and newly confirmed dates. Save titles for a reminder and a quick look from your Home Screen widget.</p>
+            <span class="ott-chart-store ott-chart-store-pending">Coming soon to the App Store</span>
+            <p class="ott-chart-languages-note">Korean · English · Japanese</p>
+          </div>
+          <img class="ott-chart-preview" src="/ott-chart/media/hero-en.jpg" alt="Coming Soon app showing search, release dates, and saved titles" width="736" height="1600" fetchpriority="high" />
+        </section>
+
+        <section class="ott-chart-features" aria-labelledby="features-title-en">
+          <p class="ott-chart-eyebrow">YOUR NEXT WATCH OR PLAY</p>
+          <h2 id="features-title-en">Find it. Save it. Get a reminder.</h2>
+          <div class="ott-chart-feature-grid">
+            <div><span aria-hidden="true">⌕</span><h3>Search in one place</h3><p>Find series, films, anime, and games by title, streaming service, game platform, or release date.</p></div>
+            <div><span aria-hidden="true">♧</span><h3>Save titles and dates</h3><p>Keep a watchlist, get a local reminder at 9 AM on a confirmed release date, and check saved dates in your Home Screen widget.</p></div>
+            <div><span aria-hidden="true">⌘</span><h3>Game release details</h3><p>See platform-specific release dates, confirmed prices, and Korean-language support with source links.</p></div>
+          </div>
+          <p class="ott-chart-note">Release schedules can change. Check each title’s source link for the latest information.</p>
+        </section>
+      </article>
+
+      <article data-locale="ja">
+        <section class="ott-chart-hero">
+          <div class="ott-chart-copy">
+            <p class="ott-chart-eyebrow">配信 · 映画 · アニメ · ゲーム</p>
+            <h1>気になる作品の公開日を、ひと目で。</h1>
+            <p class="ott-chart-lede">今週の配信予定や新たに決まった日程を確認。お気に入りを保存して通知やホーム画面ウィジェットでチェックできます。</p>
+            <span class="ott-chart-store ott-chart-store-pending">App Store公開準備中</span>
+            <p class="ott-chart-languages-note">한국어 · English · 日本語</p>
+          </div>
+          <img class="ott-chart-preview" src="/ott-chart/media/hero-ja.jpg" alt="公開予定アプリの検索、公開日、お気に入り画面" width="736" height="1600" fetchpriority="high" />
+        </section>
+
+        <section class="ott-chart-features" aria-labelledby="features-title-ja">
+          <p class="ott-chart-eyebrow">見たい作品をまとめて管理</p>
+          <h2 id="features-title-ja">検索、保存、通知。</h2>
+          <div class="ott-chart-feature-grid">
+            <div><span aria-hidden="true">⌕</span><h3>まとめて検索</h3><p>作品名、配信サービス、ゲーム機、公開日からシリーズ・映画・アニメ・ゲームを検索できます。</p></div>
+            <div><span aria-hidden="true">♧</span><h3>お気に入りと通知</h3><p>作品を保存し、公開日が確定した作品は端末の現地時間午前9時に通知。ウィジェットでも日程を確認できます。</p></div>
+            <div><span aria-hidden="true">⌘</span><h3>ゲーム発売情報</h3><p>プラットフォーム別の日程や確認済みの価格、韓国語対応情報を出典と一緒に掲載します。</p></div>
+          </div>
+          <p class="ott-chart-note">公開日は変更される場合があります。最新情報は作品ごとの出典をご確認ください。</p>
+        </section>
+      </article>
+    </main>
+    <footer class="site-footer">
+      <a class="footer-brand" href="/ott-chart/">Coming Soon</a>
+      <nav data-localized-nav aria-label="페이지 메뉴">
+        <a data-locale-href="/ott-chart/privacy" href="/ott-chart/privacy?lang=ko"><span data-locale="ko">개인정보 처리방침</span><span data-locale="en">Privacy</span><span data-locale="ja">プライバシー</span></a>
+        <a data-locale-href="/ott-chart/support" href="/ott-chart/support?lang=ko"><span data-locale="ko">고객지원</span><span data-locale="en">Support</span><span data-locale="ja">サポート</span></a>
+      </nav>
+      <p class="copyright">CoolMint</p>
+    </footer>
+  </body>
+</html>

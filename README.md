@@ -5,6 +5,9 @@
 - `/` — 포트폴리오 홈
 - `/overtake` — Overtake 프로젝트 상세
 - `/mintwallet` — MintWallet 프로젝트 상세
+- `/ott-chart` — 공개예정 app overview
+- `/ott-chart/privacy` — 공개예정 개인정보 처리방침
+- `/ott-chart/support` — 공개예정 고객지원
 
 ## Local
 

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f5ef" />
+    <meta name="description" content="공개예정 앱의 고객지원 및 자주 묻는 질문입니다." />
+    <title>고객지원 — 공개예정</title>
+    <link rel="stylesheet" href="/mintshelf/style.css" />
+    <link rel="stylesheet" href="/ott-chart/style.css" />
+    <script>
+      (() => {
+        const allowed = ["ko", "en", "ja"];
+        const requested = new URLSearchParams(window.location.search).get("lang");
+        const browser = (navigator.language || "ko").slice(0, 2).toLowerCase();
+        const locale = allowed.includes(requested) ? requested : allowed.includes(browser) ? browser : "ko";
+        document.documentElement.lang = locale;
+        document.documentElement.dataset.locale = locale;
+        document.title = ({ ko: "고객지원 — 공개예정", en: "Support — Coming Soon", ja: "サポート — 公開予定" })[locale];
+        document.addEventListener("DOMContentLoaded", () => {
+          document.querySelectorAll("[data-locale-href]").forEach((link) => {
+            link.href = `${link.dataset.localeHref}?lang=${locale}`;
+          });
+          document.querySelectorAll("[data-language-nav]").forEach((nav) => {
+            nav.setAttribute("aria-label", ({ ko: "언어", en: "Language", ja: "言語" })[locale]);
+          });
+          document.querySelectorAll("[data-localized-nav]").forEach((nav) => {
+            nav.setAttribute("aria-label", ({ ko: "페이지 메뉴", en: "Page navigation", ja: "ページメニュー" })[locale]);
+          });
+        });
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/"><span>CoolMint</span></a>
+      <nav data-localized-nav aria-label="페이지 메뉴"><a href="/"><span data-locale="ko">포트폴리오</span><span data-locale="en">Portfolio</span><span data-locale="ja">ポートフォリオ</span></a><a class="nav-support" data-locale-href="/ott-chart/privacy" href="/ott-chart/privacy?lang=ko"><span data-locale="ko">개인정보</span><span data-locale="en">Privacy</span><span data-locale="ja">プライバシー</span></a></nav>
+    </header>
+    <main class="support-main">
+      <a class="back-link" href="/">← CoolMint</a>
+      <nav class="legal-language-nav" data-language-nav aria-label="언어">
+        <a href="?lang=ko" lang="ko">한국어</a><a href="?lang=en" lang="en">English</a><a href="?lang=ja" lang="ja">日本語</a>
+      </nav>
+
+      <article data-locale="ko">
+        <p class="eyebrow eyebrow-muted">SUPPORT</p>
+        <h1>공개 일정을<br />편하게 확인하세요.</h1>
+        <p class="support-lede">공개예정 사용 중 문제가 있거나 정보를 확인하고 싶다면 아래 항목을 살펴보거나 운영자에게 문의해 주세요.</p>
+        <section class="support-card">
+          <h2>자주 묻는 질문</h2>
+          <details><summary>공개일과 작품 정보는 항상 정확한가요?</summary><p>공식 작품 페이지와 배급사 자료를 바탕으로 표시하지만 공개 일정은 바뀔 수 있습니다. 작품 상세 화면의 출처 링크에서 최신 정보를 확인해 주세요.</p></details>
+          <details><summary>알림은 언제 오나요?</summary><p>공개일이 확정된 작품은 사용자가 허용한 경우 현지 시간 오전 9시에 기기 알림을 예약합니다. 오늘 공개되는 작품은 오전 9시가 지난 뒤 새 알림을 예약할 수 없습니다.</p></details>
+          <details><summary>관심작과 필터는 다른 기기에도 동기화되나요?</summary><p>아니요. 관심작과 설정은 이 기기에 저장되며 위젯과 공유됩니다. 앱 계정이나 클라우드 동기화 기능은 없습니다.</p></details>
+          <details><summary>사용 통계에는 무엇이 포함되나요?</summary><p>사용 통계는 기본적으로 꺼져 있습니다. 직접 켜면 Firebase Analytics에 기능 사용 이벤트를 전송합니다. 이벤트에는 분류, 필터, 검색 결과 수가 포함될 수 있지만 작품 제목이나 검색어, 관심작 목록은 포함하지 않습니다. 설정에서 언제든 끌 수 있습니다.</p></details>
+          <details><summary>알림이나 사용 통계를 끄려면 어떻게 하나요?</summary><p>작품별 공개 알림은 앱의 관심작에서 해제할 수 있습니다. 시스템 알림은 iOS 설정에서 공개예정 알림을 끄면 됩니다. 사용 통계는 앱 설정의 사용 통계 스위치로 끌 수 있습니다.</p></details>
+        </section>
+        <section class="support-contact">
+          <h2>운영자 문의</h2>
+          <p>운영자: <strong>최정훈 · CoolMint</strong></p>
+          <p>지원 이메일: <a href="mailto:hello@coolmint.studio">hello@coolmint.studio</a></p>
+          <p>개인정보 처리 내용은 <a href="/ott-chart/privacy?lang=ko">개인정보 처리방침</a>을 확인해 주세요.</p>
+        </section>
+      </article>
+
+      <article data-locale="en">
+        <p class="eyebrow eyebrow-muted">SUPPORT</p>
+        <h1>Keep release dates<br />easy to follow.</h1>
+        <p class="support-lede">If you have a question or run into a problem with Coming Soon, check the answers below or contact us.</p>
+        <section class="support-card">
+          <h2>Frequently asked questions</h2>
+          <details><summary>Are release dates always final?</summary><p>Dates come from official title pages and distributors, but schedules can change. Check the source link on a title’s detail screen for the latest information.</p></details>
+          <details><summary>When will a reminder arrive?</summary><p>For a confirmed date, the app schedules a local notification for 9:00 AM in your device’s time zone if you allow notifications. A new reminder cannot be scheduled for today after 9:00 AM.</p></details>
+          <details><summary>Do watchlist items and filters sync to other devices?</summary><p>No. Watchlist items and preferences are stored on this device and shared with its widget. The app does not have accounts or cloud sync.</p></details>
+          <details><summary>What does usage analytics include?</summary><p>Usage analytics is off by default. If enabled, the app sends feature-usage events to Firebase Analytics. Events may include a category, filter, or search-result count, but not title names, search text, or your watchlist. You can turn analytics off in Settings.</p></details>
+          <details><summary>How do I turn off reminders or analytics?</summary><p>Turn off a title’s reminder from your watchlist. To disable system notifications, change Coming Soon’s notification settings in iOS. Usage analytics can be turned off with the switch in app Settings.</p></details>
+        </section>
+        <section class="support-contact">
+          <h2>Contact</h2>
+          <p>Operator: <strong>Junghoon Choi · CoolMint</strong></p>
+          <p>Support email: <a href="mailto:hello@coolmint.studio">hello@coolmint.studio</a></p>
+          <p>See our <a href="/ott-chart/privacy?lang=en">Privacy Policy</a> for information handling.</p>
+        </section>
+      </article>
+
+      <article data-locale="ja">
+        <p class="eyebrow eyebrow-muted">SUPPORT</p>
+        <h1>配信・発売日を<br />見やすく確認。</h1>
+        <p class="support-lede">公開予定アプリの使い方や作品情報について、ご質問・問題がある場合は以下をご確認いただくか、運営者までお問い合わせください。</p>
+        <section class="support-card">
+          <h2>よくある質問</h2>
+          <details><summary>配信日は常に確定していますか？</summary><p>公式作品ページや配給会社の情報を確認して掲載していますが、日程は変更される場合があります。作品詳細の出典リンクから最新情報をご確認ください。</p></details>
+          <details><summary>通知はいつ届きますか？</summary><p>公開日が確定した作品は、通知を許可すると端末の現地時間午前9時にローカル通知を予約します。公開日当日の午前9時を過ぎた後は、新しい通知を予約できません。</p></details>
+          <details><summary>お気に入りや設定は他の端末と同期されますか？</summary><p>いいえ。お気に入りと設定はこの端末に保存され、ウィジェットと共有されます。アカウントやクラウド同期機能はありません。</p></details>
+          <details><summary>利用状況分析では何が送信されますか？</summary><p>利用状況分析は初期状態でオフです。有効にした場合、Firebase Analyticsへ機能利用イベントを送信します。分類、フィルター、検索結果数が含まれることがありますが、作品名、検索語、お気に入り一覧は含めません。設定からいつでもオフにできます。</p></details>
+          <details><summary>通知や分析をオフにするには？</summary><p>作品ごとの通知はお気に入り画面から解除できます。システム通知はiOS設定で公開予定の通知をオフにしてください。利用状況分析はアプリ設定のスイッチからオフにできます。</p></details>
+        </section>
+        <section class="support-contact">
+          <h2>お問い合わせ</h2>
+          <p>運営者: <strong>Junghoon Choi · CoolMint</strong></p>
+          <p>サポートメール: <a href="mailto:hello@coolmint.studio">hello@coolmint.studio</a></p>
+          <p>情報の取り扱いについては<a href="/ott-chart/privacy?lang=ja">プライバシーポリシー</a>をご確認ください。</p>
+        </section>
+      </article>
+    </main>
+    <footer class="site-footer">
+      <a class="footer-brand" href="/">CoolMint</a>
+      <nav data-localized-nav aria-label="페이지 메뉴"><a data-locale-href="/ott-chart/privacy" href="/ott-chart/privacy?lang=ko"><span data-locale="ko">개인정보 처리방침</span><span data-locale="en">Privacy</span><span data-locale="ja">プライバシー</span></a><a href="/"><span data-locale="ko">CoolMint 포트폴리오</span><span data-locale="en">CoolMint Portfolio</span><span data-locale="ja">CoolMint ポートフォリオ</span></a></nav>
+      <p class="copyright">CoolMint</p>
+    </footer>
+  </body>
+</html>
